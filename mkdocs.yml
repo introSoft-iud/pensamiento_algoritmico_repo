@@ -1,0 +1,83 @@
+site_name: Pensamiento Algorítmico
+site_description: Notas del curso de Pensamiento Algorítmico
+site_author: Juan Camilo Macías · Institución Universitaria Digital de Antioquia
+site_url: https://introsoft-iud.github.io/pensamiento-algoritmico/
+repo_url: https://github.com/introsoft-iud/pensamiento-algoritmico
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  font:
+    text: Montserrat
+    code: Red Hat Mono
+  icon:
+    logo: material/robot
+  favicon: assets/favicon.ico
+  features:
+    - navigation.footer
+    - content.code.copy
+  palette:
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+      primary: green
+      accent: deep purple
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+      primary: blue
+      accent: deep orange
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
+  - mermaid2:
+      arguments:
+        theme: |
+          ^(JSON.parse(__md_get("__palette").index == 1)) ? 'dark' : 'light'
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - css/custom.css
+  - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css
+
+nav:
+  - Inicio: index.md
+  - Programa: programa.md
+  - Evaluación: evaluacion.md
+  - Unidades:
+      - Unidad 1: unidades/unidad1.md
+      - Unidad 2: unidades/unidad2.md
+      - Unidad 3: unidades/unidad3.md
+  - Recursos: recursos.md
+  - Glosario: glosario.md
+  - Referencias: referencias.md
