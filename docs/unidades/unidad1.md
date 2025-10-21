@@ -1,1 +1,5 @@
-# Unidad 1 — Fundamentos de algoritmia
+# Unidad 1 
+
+## EL Harware
+
+## Sofware
