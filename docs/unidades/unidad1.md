@@ -66,5 +66,19 @@ $$
 $$
 
 Es decir, una ciudad poblada por más de 30 sextillones de “habitantes‑dato”, donde cada uno representa un valor almacenado en la memoria.
+La cuestión es cómo llevar un registro de dónde viven las personas (valores, datos) que habitan una ciudad tan descomunalmente grande.
+![alt text](image-1.png)
 
+!!! admonition "Piensa en esto"
+    ¿Cómo guardarías de manera eficiente un registro de dónde están almacenadas las cosas en la memoria?
+
+Una idea sería, por ejemplo, tener una carpeta de sobres apilados en orden alfabético. Cada sobre tiene el nombre de la persona y dentro del sobre está la dirección. Entonces, por ejemplo, "don_juan" vive en Edificio Torre Malibú, Carrera 68 #32c-24, Int. 301.
+
+En programación, esto se asemeja a cómo se utilizan las variables para hacer referencia a direcciones en memoria. Aquí tienes un ejemplo en Python:
+
+```python
+&aqui quiero ver eejeplos de variables y su direccion en la memoria&
+```
+
+En este ejemplo, `don_juan` es el nombre de la variable que hace referencia a una dirección específica en la memoria, similar a cómo un nombre en un sobre hace referencia a una dirección en la ciudad.
 
