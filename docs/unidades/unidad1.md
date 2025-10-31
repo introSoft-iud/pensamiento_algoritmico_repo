@@ -22,7 +22,7 @@ La conexión entre software y hardware puede ser entendida a partir del siguient
 
 En este curso usaremos Python como nuestra puerta de entrada al mundo de la programación. Sin embargo, Python es solo uno de los posibles lenguajes en los que podemos dar instrucciones a los computadores. Python forma parte de lo que conocemos como lenguajes formales.
 
-Los lenguajes formales aparecen en áreas como las matemáticas. Por ejemplo, la expresión \( \int f(x) \, dx = U \) tiene un significado preciso y una sintaxis y unos símbolos "tokens" particulares. En particular, un lenguaje de programación 
+Los lenguajes formales aparecen en áreas como las matemáticas. Por ejemplo, la expresión $( \int f(x) \, dx = U $) tiene un significado preciso y una sintaxis y unos símbolos "tokens" particulares. En particular, un lenguaje de programación 
 *es un lenguaje formal diseñado para expresar computaciones*
 
 Por su parte, los lenguajes naturales, como el español o el francés, son creaciones culturales que reflejan en parte la complejidad de la experiencia humana. Por tanto, tienen la capacidad de expresar muchas cosas de manera ambigua, redundante, con doble sentido, chistes, poesía, etc.
