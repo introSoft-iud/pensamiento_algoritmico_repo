@@ -22,11 +22,13 @@ La conexión entre software y hardware puede ser entendida a partir del siguient
 
 En este curso usaremos Python como nuestra puerta de entrada al mundo de la programación. Sin embargo, Python es solo uno de los posibles lenguajes en los que podemos dar instrucciones a los computadores. Python forma parte de lo que conocemos como lenguajes formales.
 
-Los lenguajes formales aparecen en áreas como las matemáticas. Por ejemplo, la expresión \( \int f(x) \, dx = U \) tiene un significado preciso y una sintaxis y unos símbolos "tokens" particulares. En particular, un lenguaje de programación es un lenguaje 
-
+Los lenguajes formales aparecen en áreas como las matemáticas. Por ejemplo, la expresión \( \int f(x) \, dx = U \) tiene un significado preciso y una sintaxis y unos símbolos "tokens" particulares. En particular, un lenguaje de programación 
 *es un lenguaje formal diseñado para expresar computaciones*
 
-Por su parte, los lenguajes naturales, como el español o el francés, son creaciones culturales que reflejan en parte la complejidad de la experiencia humana. Por tanto, tienen la capacidad de expresar muchas cosas de manera ambigua, redundante, con doble sentido, chistes, poesía, etc. Puedes consultar la referencia: [The Way of the Program](https://openbookproject.net/thinkcs/python/english3e/way_of_the_program.html).
+Por su parte, los lenguajes naturales, como el español o el francés, son creaciones culturales que reflejan en parte la complejidad de la experiencia humana. Por tanto, tienen la capacidad de expresar muchas cosas de manera ambigua, redundante, con doble sentido, chistes, poesía, etc.
+
+!!! admonition "Consulta más detalles"
+    Puedes consultar la referencia para más detalles: [The Way of the Program](https://openbookproject.net/thinkcs/python/english3e/way_of_the_program.html).
 
 Hoy en día, los modelos de lenguaje LLM en los que se basan los sistemas de inteligencia artificial más populares están haciendo posible que creemos instrucciones para los computadores en lenguaje natural. Pero esto no significa que aprender a hablar en Python y similares no sea importante. Primero, es la herramienta que te permitirá pensar computacionalmente, y segundo, el paradigma que se impone es una mezcla de los dos lenguajes. Construiremos código para ciertas instrucciones y veremos que en otras partes será más apropiado crear la instrucción en lenguaje natural.
 
