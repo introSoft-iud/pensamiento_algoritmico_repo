@@ -17,30 +17,27 @@ La conexión entre software y hardware puede ser entendida a partir del siguient
 <iframe width="560" height="315" src="https://www.youtube.com/embed/HjneAhCy2N4" frameborder="0" allowfullscreen></iframe>
 
 ## Sesión 2: Variables y estructuras de datos
+
 ## Los Lenguajes de Programación
 
-En este curso usaremos Python como nuestra puerta de entrada al mundo de la programación. Sin embargo, Python es solo uno de los posibles lenguajes en los que podemos dar instrucciones a los computadores. Python forma parte de lo que conocemos como lenguajes formales. 
+En este curso usaremos Python como nuestra puerta de entrada al mundo de la programación. Sin embargo, Python es solo uno de los posibles lenguajes en los que podemos dar instrucciones a los computadores. Python forma parte de lo que conocemos como lenguajes formales.
 
-Los lenguajes formales son lenguajes diseñados por personas para aplicaciones específicas. Por ejemplo, la notación que utilizan los matemáticos es un lenguaje formal particularmente bueno para denotar relaciones entre números y símbolos. Los químicos usan un lenguaje formal para representar la estructura química de las moléculas. Y lo más importante:
+Los lenguajes formales aparecen en áreas como las matemáticas. Por ejemplo, la expresión \( \int f(x) \, dx = U \) tiene un significado preciso y una sintaxis y unos símbolos "tokens" particulares. En particular, un lenguaje de programación es un lenguaje 
 
-Los lenguajes de programación son lenguajes formales diseñados para expresar cálculos. Las reglas de sintaxis vienen en dos tipos, relacionadas con los tokens y la estructura. Los tokens son los elementos básicos del lenguaje, como palabras, números, paréntesis, comas, etc. En Python, una declaración como `print("Feliz Año Nuevo para ", 2013)` tiene 6 tokens: un nombre de función, un paréntesis de apertura, una cadena de texto, una coma, un número y un paréntesis de cierre.
+*es un lenguaje formal diseñado para expresar computaciones*
 
-Es posible cometer errores en la forma en que se construyen los tokens. Uno de los problemas con `3=+6$` es que `$` no es un token legal en matemáticas (al menos hasta donde sabemos). De manera similar, `2Zz` no es un token legal en notación química porque no hay un elemento con la abreviatura Zz.
+Por su parte, los lenguajes naturales, como el español o el francés, son creaciones culturales que reflejan en parte la complejidad de la experiencia humana. Por tanto, tienen la capacidad de expresar muchas cosas de manera ambigua, redundante, con doble sentido, chistes, poesía, etc. Puedes consultar la referencia: [The Way of the Program](https://openbookproject.net/thinkcs/python/english3e/way_of_the_program.html).
 
-El segundo tipo de regla de sintaxis se refiere a la estructura de una declaración, es decir, la forma en que se organizan los tokens. La declaración `3=+6$` es estructuralmente ilegal porque no se puede colocar un signo más inmediatamente después de un signo igual. De manera similar, las fórmulas moleculares deben tener subíndices después del nombre del elemento, no antes. Y en nuestro ejemplo de Python, si omitiéramos la coma, o si cambiáramos los dos paréntesis para decir `print)"Feliz Año Nuevo para ", 2013(`, nuestra declaración seguiría teniendo seis tokens legales y válidos, pero la estructura sería ilegal.
+Hoy en día, los modelos de lenguaje LLM en los que se basan los sistemas de inteligencia artificial más populares están haciendo posible que creemos instrucciones para los computadores en lenguaje natural. Pero esto no significa que aprender a hablar en Python y similares no sea importante. Primero, es la herramienta que te permitirá pensar computacionalmente, y segundo, el paradigma que se impone es una mezcla de los dos lenguajes. Construiremos código para ciertas instrucciones y veremos que en otras partes será más apropiado crear la instrucción en lenguaje natural.
 
-Cuando lees una oración en inglés o una declaración en un lenguaje formal, tienes que averiguar cuál es la estructura de la oración (aunque en un lenguaje natural lo haces de manera subconsciente). Este proceso se llama análisis sintáctico o parsing.
+La buena noticia es que aprender un lenguaje de programación resulta más fácil que aprender francés o español. De hecho, un lenguaje de programación y toda la magia que se deriva de ellos, como el internet y el machine learning, se basa en los siguientes elementos básicos:
 
-Por ejemplo, cuando escuchas la oración, "El otro zapato cayó", entiendes que "el otro zapato" es el sujeto y "cayó" es el verbo. Una vez que has analizado una oración, puedes averiguar qué significa, o la semántica de la oración. Suponiendo que sabes qué es un zapato y qué significa caer, entenderás la implicación general de esta oración.
+- **Entrada:** Obtener datos desde el teclado, un archivo u otro dispositivo.
+- **Salida:** Mostrar datos en la pantalla o enviar datos a un archivo u otro dispositivo.
+- **Matemáticas:** Realizar operaciones matemáticas básicas como la suma y la multiplicación.
+- **Ejecución condicional:** Verificar ciertas condiciones y ejecutar la secuencia de instrucciones apropiada.
+- **Repetición:** Realizar una acción repetidamente, usualmente con alguna variación.
 
-Aunque los lenguajes formales y naturales tienen muchas características en común —tokens, estructura, sintaxis y semántica—, existen muchas diferencias:
+Créelo o no, eso es prácticamente todo. Cada programa que has usado, sin importar cuán complicado sea, está compuesto de instrucciones que se parecen más o menos a estas. Así, podemos describir la programación como el proceso de descomponer una tarea grande y compleja en subtareas cada vez más pequeñas hasta que las subtareas sean lo suficientemente simples como para ser realizadas con secuencias de estas instrucciones básicas.
 
-- **Ambigüedad:** Los lenguajes naturales están llenos de ambigüedad, que las personas manejan utilizando pistas contextuales y otra información. Los lenguajes formales están diseñados para ser casi o completamente no ambiguos, lo que significa que cualquier declaración tiene exactamente un significado, independientemente del contexto.
-  
-- **Redundancia:** Para compensar la ambigüedad y reducir malentendidos, los lenguajes naturales emplean mucha redundancia. Como resultado, a menudo son verbosos. Los lenguajes formales son menos redundantes y más concisos.
-  
-- **Literalidad:** Los lenguajes formales significan exactamente lo que dicen. Por otro lado, los lenguajes naturales están llenos de modismos y metáforas. Si alguien dice, "El otro zapato cayó", probablemente no hay ningún zapato ni nada cayendo. Necesitarás encontrar la broma original para entender el significado idiomático de "el otro zapato cayendo". ¡Yahoo! Respuestas cree que lo sabe.
-
-Las personas que crecen hablando un lenguaje natural —todos— a menudo tienen dificultades para adaptarse a los lenguajes formales. En algunos aspectos, la diferencia entre el lenguaje formal y natural es como la diferencia entre poesía y prosa, pero más aún.
-
-Finalmente, para más información, puedes consultar la referencia: [The Way of the Program](https://openbookproject.net/thinkcs/python/english3e/way_of_the_program.html).
+Aunque esto puede parecer un poco vago, volveremos a este tema más adelante cuando hablemos de algoritmos. Para más información, puedes consultar la referencia: [The Way of the Program](https://openbookproject.net/thinkcs/python/english3e/way_of_the_program.html).
