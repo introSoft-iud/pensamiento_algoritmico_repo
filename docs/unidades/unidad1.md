@@ -40,6 +40,8 @@ Hoy en día, los modelos de lenguaje LLM en los que se basan los sistemas de int
 
 La buena noticia es que aprender un lenguaje de programación resulta más fácil que aprender francés o español. De hecho, un lenguaje de programación y toda la magia que se deriva de ellos, como el internet y el machine learning, se basa en los siguientes elementos básicos:
 
+![alt text](image.png)
+
 - **Entrada:** Obtener datos desde el teclado, un archivo u otro dispositivo.
 - **Salida:** Mostrar datos en la pantalla o enviar datos a un archivo u otro dispositivo.
 - **Matemáticas:** Realizar operaciones matemáticas básicas como la suma y la multiplicación.
@@ -51,7 +53,18 @@ Créelo o no, eso es prácticamente todo. Cada programa que has usado, sin impor
 Aunque esto puede parecer un poco vago, volveremos a este tema más adelante cuando hablemos de algoritmos. 
 
 ### Variables, expressions and statements
+Una variable es un nombre que usamos para hacer referencia a un valor que guardamos en la memoria del computador.
 
-Una *varible* es un nombre que usamos para referenciar un valor que guardamos en la memoria del computador, por ejemplo. Supon que la memoria es un edificio, ' edificio Torre Malibu'. Si queremos guardar em una libreta los datos de las personas que lo habitan entonces un m[etodo] es crar la capeta 
+Para imaginarlo mejor, supongamos que la memoria de un computador es tan grande como la ciudad de Medellín, que tiene aproximadamente 2.5 millones de habitantes y una superficie de 380 km².
+
+Ahora bien, piensa en una unidad SSD (unidad de estado sólido) expandida hasta cubrir toda esa área. Si cada celda de memoria (trampa de electrones que almacena un bit) fuera del tamaño de un apartamento de 20 nm × 20 nm, y se construyeran 1000 pisos de estos apartamentos uno sobre otro (como edificios), esa “Medellín‑SSD” estaría completamente cubierta por edificios de memoria.
+
+En total, una SSD de ese tamaño y configuración podría almacenar aproximadamente:
+
+$$
+30 \text{ trillones de trillones} = 2.97 \times 10^{25} \text{ enteros de 32 bits}
+$$
+
+Es decir, una ciudad poblada por más de 30 sextillones de “habitantes‑dato”, donde cada uno representa un valor almacenado en la memoria.
 
 
