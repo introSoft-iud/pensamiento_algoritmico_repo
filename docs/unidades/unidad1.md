@@ -9,7 +9,7 @@ Sección en construcción. Para entender cómo funciona el hardware, te invito a
 
 Una vez veas el video anterior, es bueno echar un vistazo a la forma moderna de estas tecnologías. Para esto, te invito a ver este video donde se recrea la estructura microscópica de una memoria SSD moderna:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5Mh3o886qpg?t=51s" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=5Mh3o886qpg&t=51s" frameborder="0" allowfullscreen></iframe>
 ## Software
 
 La conexión entre software y hardware puede ser entendida a partir del siguiente video:
@@ -18,7 +18,7 @@ La conexión entre software y hardware puede ser entendida a partir del siguient
 
 ## Sesión 2: Variables y estructuras de datos
 
-## Los Lenguajes de Programación
+### Los Lenguajes de Programación
 
 En este curso usaremos Python como nuestra puerta de entrada al mundo de la programación. Sin embargo, Python es solo uno de los posibles lenguajes en los que podemos dar instrucciones a los computadores. Python forma parte de lo que conocemos como lenguajes formales.
 
@@ -42,4 +42,10 @@ La buena noticia es que aprender un lenguaje de programación resulta más fáci
 
 Créelo o no, eso es prácticamente todo. Cada programa que has usado, sin importar cuán complicado sea, está compuesto de instrucciones que se parecen más o menos a estas. Así, podemos describir la programación como el proceso de descomponer una tarea grande y compleja en subtareas cada vez más pequeñas hasta que las subtareas sean lo suficientemente simples como para ser realizadas con secuencias de estas instrucciones básicas.
 
-Aunque esto puede parecer un poco vago, volveremos a este tema más adelante cuando hablemos de algoritmos. Para más información, puedes consultar la referencia: [The Way of the Program](https://openbookproject.net/thinkcs/python/english3e/way_of_the_program.html).
+Aunque esto puede parecer un poco vago, volveremos a este tema más adelante cuando hablemos de algoritmos. 
+
+### Variables, expressions and statements
+
+Una *varible* es un nombre que usamos para referenciar un valor que guardamos en la memoria del computador, por ejemplo. Supon que la memoria es un edificio, ' edificio Torre Malibu'. Si queremos guardar em una libreta los datos de las personas que lo habitan entonces un m[etodo] es crar la capeta 
+
+
