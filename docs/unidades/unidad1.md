@@ -664,6 +664,13 @@ Si queremos que el valor introducido se interprete como un número, debemos **co
 `print()` e `input()` son ejemplos de **funciones**, es decir, **bloques de código reutilizables** que realizan una tarea específica.  
 Una función puede **recibir datos de entrada** (llamados *parámetros* o *argumentos*) y **devolver un resultado** o simplemente ejecutar una acción.
 
+
+La estructura general para definir una función es la siguiente:
+
+```python
+def nombre_funcion(parámetros):
+    sentencias
+
 Las funciones nos ayudan a **organizar** el código, **evitar repeticiones** y **hacer los programas más claros**.
 
 Podemos crear nuestras propias funciones en Python usando la palabra reservada `def`, seguida del **nombre de la función**, una lista opcional de **parámetros entre paréntesis**, y dos puntos `:`.  
@@ -786,9 +793,6 @@ Vemos otro ejemplo:
     El área del rectángulo es 15.0
     ```
 
----
-
-Las funciones permiten dividir el código en partes más pequeñas, **reutilizables** y **fáciles de mantener**.
 
 ### Alcance de las variables: globales y locales
 
@@ -907,4 +911,166 @@ El uso de `global` le indica al intérprete que la variable `contador` **ya exis
     - **Contexto local:** variables creadas dentro de una función; solo existen mientras esa función se ejecuta.  
     - **Sombra de variables:** cuando una variable local tiene el mismo nombre que una global, la local tiene prioridad dentro del bloque.  
     - **Palabra clave `global`:** permite modificar variables globales desde funciones, aunque debe usarse con precaución para evitar errores difíciles de rastrear.
+### Las funciones pueden llamar a otras funciones
 
+Una de las características más poderosas de Python es que **una función puede invocar a otra**.  
+Esto permite **dividir problemas complejos en tareas más pequeñas**, reutilizando código y mejorando la organización del programa.
+
+Cuando una función llama a otra, el flujo de ejecución **se transfiere temporalmente** a la función llamada.  
+Cuando esta termina, el control **vuelve** a la función original.
+
+---
+
+#### Ejemplo: una función que llama a otra
+
+=== "Código"
+    ```python
+    def saludar():
+        print("Hola, ¿cómo estás?")
+
+    def despedirse():
+        print("Hasta luego, ¡que tengas un buen día!")
+
+    def conversacion():
+        saludar()       # Llamada a la función 'saludar'
+        print("Fue un placer hablar contigo.")
+        despedirse()    # Llamada a la función 'despedirse'
+
+    conversacion()
+    ```
+
+=== "Salida"
+    ```bash
+    Hola, ¿cómo estás?
+    Fue un placer hablar contigo.
+    Hasta luego, ¡que tengas un buen día!
+    ```
+
+En este ejemplo:
+1. El programa comienza ejecutando `conversacion()`.  
+2. Dentro de esa función se llama primero a `saludar()`.  
+3. Luego se imprime un mensaje intermedio.  
+4. Finalmente se llama a `despedirse()`.  
+Cuando `despedirse()` termina, el control vuelve al punto donde fue invocada, y luego finaliza la función `conversacion()`.
+
+---
+
+#### Ejemplo: funciones encadenadas con parámetros
+
+También podemos **pasar argumentos** entre funciones, de modo que una función **use los resultados** de otra.
+
+=== "Código"
+    ```python
+    def cuadrado(x):
+        return x * x
+
+    def suma_de_cuadrados(a, b):
+        return cuadrado(a) + cuadrado(b)
+
+    resultado = suma_de_cuadrados(3, 4)
+    print(f"El resultado es {resultado}")
+    ```
+
+=== "Salida"
+    ```bash
+    El resultado es 25
+    ```
+
+Aquí, `suma_de_cuadrados()` llama dos veces a `cuadrado()`.  
+Cada vez que `cuadrado()` se ejecuta, devuelve un valor que se usa dentro de `suma_de_cuadrados()`.
+
+---
+
+!!! tip "Modularidad y reutilización"
+    - **Llamar funciones desde otras funciones** hace que el código sea más modular y legible.  
+    - Permite **reutilizar funciones existentes** en contextos nuevos, sin tener que reescribir código.  
+    - Este enfoque facilita la **depuración** (debugging) y el **mantenimiento** del programa, ya que cada función puede probarse de forma independiente.
+
+
+!!! warning "Prepárate... ¡aquí es donde puede explotar tu cabeza! 💥"
+    Lo que vas a ver a continuación es uno de los conceptos más fascinantes (y a la vez más desafiantes) de la programación: **la recursión**.
+
+---
+
+### Recursión
+
+La **recursión** ocurre cuando una **función se llama a sí misma** durante su ejecución.  
+En lugar de repetir código con bucles, una función recursiva **se repite a sí misma** hasta alcanzar una condición que detiene el proceso.
+
+Este mecanismo permite resolver problemas que pueden **dividirse en subproblemas más pequeños** del mismo tipo.
+
+---
+
+#### Estructura de una función recursiva
+
+Una función recursiva debe tener **dos partes fundamentales**:
+
+1. **Caso base** → condición que detiene la recursión.  
+2. **Llamada recursiva** → la función se invoca nuevamente con un problema más pequeño.
+
+=== "Código"
+    ```python
+    def cuenta_regresiva(n):
+        if n == 0:                # Caso base
+            print("¡Despegue! 🚀")
+        else:
+            print(n)
+            cuenta_regresiva(n - 1)  # Llamada recursiva
+
+    cuenta_regresiva(5)
+    ```
+
+=== "Salida"
+    ```bash
+    5
+    4
+    3
+    2
+    1
+    ¡Despegue! 🚀
+    ```
+
+Aquí, la función `cuenta_regresiva()` se llama a sí misma disminuyendo `n` en cada paso.  
+Cuando `n` llega a cero, se cumple el **caso base** y el proceso se detiene.
+
+---
+
+#### Ejemplo clásico: factorial de un número
+
+El **factorial** de un número \( n \) se define como:
+
+\[
+n! = n \times (n-1) \times (n-2) \times \dots \times 1
+\]
+
+Y puede expresarse de forma recursiva:
+
+\[
+n! = n \times (n-1)!
+\]
+
+=== "Código"
+    ```python
+    def factorial(n):
+        if n == 0 or n == 1:      # Caso base
+            return 1
+        else:
+            return n * factorial(n - 1)  # Llamada recursiva
+
+    print(factorial(5))
+    ```
+
+=== "Salida"
+    ```bash
+    120
+    ```
+
+---
+
+!!! tip "Cómo pensar la recursión"
+    Imagina una **serie de espejos** frente a frente: cada uno refleja el siguiente, pero en cada reflejo la imagen se hace más pequeña.  
+    En programación, la recursión funciona igual:  
+    cada llamada crea una **nueva copia de la función** con un problema más pequeño, hasta que llega al reflejo más diminuto, el **caso base**, donde todo comienza a resolverse hacia atrás.
+
+La recursión es poderosa y elegante, pero también peligrosa:  
+si olvidas el caso base, la función nunca se detendrá, provocando un **bucle infinito** y un **error de desbordamiento de pila (RecursionError)**.
