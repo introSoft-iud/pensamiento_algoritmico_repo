@@ -992,7 +992,7 @@ Cada vez que `cuadrado()` se ejecuta, devuelve un valor que se usa dentro de `su
 
 ---
 
-````markdown
+
 ### Condicionales: `if`, `elif` y `else`
 
 En programación, muchas veces necesitamos que el código **tome decisiones** dependiendo de una condición.  
