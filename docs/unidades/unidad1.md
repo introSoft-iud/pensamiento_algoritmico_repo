@@ -52,7 +52,7 @@ Créelo o no, eso es prácticamente todo. Cada programa que has usado, sin impor
 
 Aunque esto puede parecer un poco vago, volveremos a este tema más adelante cuando hablemos de algoritmos. 
 
-### Variables, expressions and statements
+### Variables
 Una variable es un nombre que usamos para hacer referencia a un valor que guardamos en la memoria del computador.
 
 Para imaginarlo mejor, supongamos que la memoria de un computador es tan grande como la ciudad de Medellín, que tiene aproximadamente 2.5 millones de habitantes y una superficie de 380 km².
@@ -188,4 +188,65 @@ En cambio, `c` tiene una dirección distinta porque contiene otro valor.
         ```
 
     Ahora `b` apunta a una **nueva dirección en memoria**, ya que su valor cambió.  
-    En consecuencia, `a` y `b` ya no hacen referencia al mismo objeto.
+    En consecuencia, `a` y `b` ya no hacen referencia a la misma variable.
+## Operadores
+
+Hemos introducido el concepto de **variable**, y al mismo tiempo vimos cómo guardar valores en ellas.  
+En el proceso, sin notarlo, usamos el símbolo `=`, que es un **operador** llamado **operador de asignación**.
+
+Un **operador** es un símbolo o palabra reservada que **indica una operación que el intérprete debe realizar** sobre uno o más valores.  
+Por ejemplo, los operadores `+`, `-`, `*` y `/` realizan operaciones aritméticas, mientras que `=` asigna un valor a una variable.
+
+El **operador de asignación** `=` **no compara igualdad**, sino que **toma el valor que está a la derecha y lo guarda en la variable de la izquierda**.
+
+=== "Código"
+    ```python
+    a = 5
+    b = a + 2
+    print(a, b)
+    ```
+
+=== "Salida"
+    ```bash
+    5 7
+    ```
+
+En este ejemplo, el operador `=` le indica al intérprete que **asigne** el resultado de `a + 2` (es decir, 7) a la variable `b`.
+
+---
+
+### Diferencia entre el símbolo "=" en matemáticas y en Python
+
+En **matemáticas**, la expresión
+
+$$
+x = 3
+$$
+
+significa que *x es igual a 3*, es decir, una **igualdad** permanente y simétrica: si \(x = 3\), entonces \(3 = x\).
+
+En **Python**, en cambio, la instrucción
+
+```python
+x = 3
+```
+
+Significa **“asigna el valor 3 a la variable `x`”**.  
+La relación **no es simétrica**: puedes decir *“x toma el valor 3”*, pero no *“3 toma el valor de x”*.
+
+Si quisiéramos comprobar **igualdad lógica** en Python, usamos el operador `==`, como se muestra a continuación:
+
+=== "Código"
+    ```python
+    x = 3
+    print(x == 3)
+    print(3 == x)
+    ```
+
+=== "Salida"
+    ```bash
+    True
+    True
+    ```
+
+El operador `==` **compara** los valores de ambos lados y devuelve `True` si son iguales, o `False` en caso contrario.
