@@ -122,3 +122,37 @@ Podemos verificar que efectivamente se trata de un entero haciendo:
     ```bash
     <class 'int'>
     ```
+Mientras que la **dirección en la memoria** donde se almacena el valor de la variable puede consultarse con la función `id()`:
+
+=== "Código"
+    ```python
+    a = 3
+    print(id(a))
+    ```
+
+=== "Salida"
+    ```bash
+    140356812509040
+    ```
+
+El número que devuelve `id(a)` representa una **dirección única** dentro de la memoria del programa (no necesariamente la dirección física del hardware).  
+Cada vez que creamos una nueva variable o reasignamos un valor, Python puede ubicar ese valor en una posición diferente de memoria.  
+
+Por ejemplo:
+
+=== "Código"
+    ```python
+    a = 3
+    b = 3
+    c = 4
+    print(id(a), id(b), id(c))
+    ```
+
+=== "Salida"
+    ```bash
+    140356812509040 140356812509040 140356812509072
+    ```
+
+Observa que `a` y `b` apuntan a la **misma dirección en memoria**, ya que Python optimiza el almacenamiento de valores inmutables (como los enteros pequeños) reutilizando el mismo espacio.  
+En cambio, `c` tiene una dirección distinta porque contiene otro valor.
+
