@@ -670,6 +670,7 @@ La estructura general para definir una función es la siguiente:
 ```python
 def nombre_funcion(parámetros):
     sentencias
+```
 
 Las funciones nos ayudan a **organizar** el código, **evitar repeticiones** y **hacer los programas más claros**.
 
