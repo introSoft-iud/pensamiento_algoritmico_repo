@@ -919,7 +919,7 @@ Esto permite **dividir problemas complejos en tareas más pequeñas**, reutiliza
 Cuando una función llama a otra, el flujo de ejecución **se transfiere temporalmente** a la función llamada.  
 Cuando esta termina, el control **vuelve** a la función original.
 
----
+
 
 #### Ejemplo: una función que llama a otra
 
@@ -937,6 +937,7 @@ Cuando esta termina, el control **vuelve** a la función original.
         despedirse()    # Llamada a la función 'despedirse'
 
     conversacion()
+    
     ```
 
 === "Salida"
