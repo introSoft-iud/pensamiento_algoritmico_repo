@@ -563,22 +563,21 @@ las cadenas **no cambian su valor original** cuando se concatenan o repiten.
 Cada operación crea una **nueva cadena en memoria**, lo que refleja el carácter **inmutable** de los objetos tipo `str` en Python.
 
 !!! note "Sobrecarga de operadores"
+    Cuando un mismo **operador** puede tener **más de un significado** dependiendo del tipo de datos con el que se use, hablamos de **sobrecarga de operadores** (*operator overloading*).
 
-Cuando un mismo **operador** puede tener **más de un significado** dependiendo del tipo de datos con el que se use, hablamos de **sobrecarga de operadores** (*operator overloading*).
+    Por ejemplo, en Python:
+    - `+` **suma** números (`2 + 3 = 5`),  
+    pero **concatena** cadenas (`"Hola" + "Mundo" = "HolaMundo"`).  
+    - `*` **multiplica** números (`4 * 3 = 12`),  
+    pero **repite** cadenas (`"ha" * 3 = "hahaha"`).
 
-Por ejemplo, en Python:
-- `+` **suma** números (`2 + 3 = 5`),  
-  pero **concatena** cadenas (`"Hola" + "Mundo" = "HolaMundo"`).  
-- `*` **multiplica** números (`4 * 3 = 12`),  
-  pero **repite** cadenas (`"ha" * 3 = "hahaha"`).
+    Esto ocurre porque cada tipo de dato (`int`, `float`, `str`, etc.) tiene su propia **implementación interna** de los operadores.  
+    Python interpreta qué hacer según el **tipo de los operandos** involucrados.
 
-Esto ocurre porque cada tipo de dato (`int`, `float`, `str`, etc.) tiene su propia **implementación interna** de los operadores.  
-Python interpreta qué hacer según el **tipo de los operandos** involucrados.
-
-La sobrecarga de operadores **también existe en otros lenguajes**, como **C++**, **Java**, o **Kotlin**, aunque no todos la manejan igual:
-- En **C++**, el programador puede **definir manualmente** cómo debe comportarse un operador para una clase personalizada.
-- En **Java**, los operadores no pueden redefinirse, pero algunos tipos integrados, como `String`, también tienen sobrecarga implícita (por ejemplo, `+` concatena textos).
-La sobrecarga de operadores hace que el código sea más **intuitivo y expresivo**, siempre que se use con claridad y coherencia.
+    La sobrecarga de operadores **también existe en otros lenguajes**, como **C++**, **Java**, o **Kotlin**, aunque no todos la manejan igual:
+    - En **C++**, el programador puede **definir manualmente** cómo debe comportarse un operador para una clase personalizada.
+    - En **Java**, los operadores no pueden redefinirse, pero algunos tipos integrados, como `String`, también tienen sobrecarga implícita (por ejemplo, `+` concatena textos).
+    La sobrecarga de operadores hace que el código sea más **intuitivo y expresivo**, siempre que se use con claridad y coherencia.
 
 ### Lectura y escritura de valores en variables
 
@@ -659,16 +658,13 @@ Si queremos que el valor introducido se interprete como un número, debemos **co
 !!! tip "Diferencia entre `print()` e `input()`"
     - `print()` **muestra** información en pantalla.  
     - `input()` **lee** información del usuario y **la almacena** como texto en una variable.  
+
 ### Funciones
 
 `print()` e `input()` son ejemplos de **funciones**, es decir, **bloques de código reutilizables** que realizan una tarea específica.  
 Una función puede **recibir datos de entrada** (llamados *parámetros* o *argumentos*) y **devolver un resultado** o simplemente ejecutar una acción.
 
 Las funciones nos ayudan a **organizar** el código, **evitar repeticiones** y **hacer los programas más claros**.
-
----
-
-#### Definir funciones propias
 
 Podemos crear nuestras propias funciones en Python usando la palabra reservada `def`, seguida del **nombre de la función**, una lista opcional de **parámetros entre paréntesis**, y dos puntos `:`.  
 El cuerpo de la función va indentado (con sangría).
@@ -678,6 +674,30 @@ El cuerpo de la función va indentado (con sangría).
     def saludar():
         print("¡Hola, bienvenido al programa!")
     ```
+
+!!! note "La importancia de la indentación en Python"
+    En **Python**, la **indentación** (los espacios o tabulaciones al inicio de una línea) **define los bloques de código**.  
+    Esto significa que el intérprete usa la sangría para saber **qué instrucciones pertenecen a una función, a un condicional, o a un bucle**.
+
+    Por ejemplo:
+    ```python
+    def ejemplo():
+        print("Esta línea está dentro de la función")
+    print("Esta línea está fuera de la función")
+    ```
+
+    Si la indentación no es correcta, Python mostrará un **error de sintaxis**.  
+    Lo más común es usar **cuatro espacios** para cada nivel de sangría (según la guía oficial *PEP 8*).
+
+    En otros lenguajes, como **C**, **Java** o **JavaScript**, los bloques se delimitan con **llaves `{}`**, y la indentación solo mejora la legibilidad, pero **no afecta la ejecución** del programa:
+
+    ```java
+    void ejemplo() {
+        System.out.println("Dentro de la función");
+    }
+    ```
+
+    En cambio, en Python, la indentación **es parte de la sintaxis**, y por tanto **obligatoria**.
 
 Esta función no recibe parámetros ni devuelve un valor.  
 Para **ejecutarla**, simplemente la llamamos por su nombre:
@@ -693,8 +713,6 @@ Para **ejecutarla**, simplemente la llamamos por su nombre:
     ```
 
 ---
-
-#### Funciones con parámetros
 
 Una función puede recibir información para trabajar con ella.  
 Por ejemplo:
@@ -718,8 +736,6 @@ Al llamar la función, le pasamos un valor entre paréntesis:
     ```
 
 ---
-
-#### Funciones que devuelven un valor
 
 Algunas funciones no solo ejecutan una acción, sino que **devuelven un resultado** usando la palabra `return`.
 
@@ -750,9 +766,7 @@ Podemos guardar el valor que devuelve la función en una variable:
     - Las **sentencias** o *statements* son las instrucciones que se ejecutan dentro del cuerpo de la función.  
     - El comando `return` indica el **valor de salida** que la función devuelve al finalizar su ejecución.
 
----
-
-#### Ejemplo combinado
+Vemos otro ejemplo:
 
 === "Código"
     ```python
