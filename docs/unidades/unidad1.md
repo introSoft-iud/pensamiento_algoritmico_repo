@@ -74,11 +74,22 @@ La cuestión es cómo llevar un registro de dónde viven las personas (valores, 
 
 Una idea sería, por ejemplo, tener una carpeta de sobres apilados en orden alfabético. Cada sobre tiene el nombre de la persona y dentro del sobre está la dirección. Entonces, por ejemplo, "don_juan" vive en Edificio Torre Malibú, Carrera 68 #32c-24, Int. 301.
 
-En programación, esto se asemeja a cómo se utilizan las variables para hacer referencia a direcciones en memoria. Aquí tienes un ejemplo en Python:
+En programación, esto se logra con el uso de variables. Por ejemplo, si hago:
 
 ```python
-&aqui quiero ver eejeplos de variables y su direccion en la memoria&
+a = 3
 ```
 
-En este ejemplo, `don_juan` es el nombre de la variable que hace referencia a una dirección específica en la memoria, similar a cómo un nombre en un sobre hace referencia a una dirección en la ciudad.
+El intérprete de Python asigna a un sector de la memoria la etiqueta "a" (similar a "don_juan" en el ejemplo anterior) y guarda en este sector de la memoria el valor 3. Tres es un número entero, por lo tanto, el espacio de memoria (el apartamento) reservado para `a` debe ser lo suficientemente grande para albergar un entero en binario, es decir, \(3\) en binario es \(11_2\).
 
+Podemos verificar que efectivamente se trata de un entero haciendo:
+
+=== "Código"
+    ```python
+    type(a)
+    ```
+
+=== "Salida"
+    ```bash
+    <class 'int'>
+    ```
