@@ -1199,11 +1199,32 @@ n! = n \times (n-1)!
     ```
 
 ---
+!!! warning "La recursión es poderosa y elegante, pero también peligrosa ⚠️"  
+    Si olvidas el **caso base**, la función **nunca se detendrá**, provocando un **bucle infinito** y finalmente un  
+    **error de desbordamiento de pila (`RecursionError`)**.
 
-!!! tip "Cómo pensar la recursión"
-    Imagina una **serie de espejos** frente a frente: cada uno refleja el siguiente, pero en cada reflejo la imagen se hace más pequeña.  
-    En programación, la recursión funciona igual:  
-    cada llamada crea una **nueva copia de la función** con un problema más pequeño, hasta que llega al reflejo más diminuto, el **caso base**, donde todo comienza a resolverse hacia atrás.
+    Observa este ejemplo (¡no lo intentes en casa! 🚫):
 
-La recursión es poderosa y elegante, pero también peligrosa:  
-si olvidas el caso base, la función nunca se detendrá, provocando un **bucle infinito** y un **error de desbordamiento de pila (RecursionError)**.
+    === "Código"
+    ```python
+    def sin_fin():
+        print("Llamando otra vez...")
+        sin_fin()  # La función se llama a sí misma sin detenerse
+
+    sin_fin()
+    ```
+
+    === "Salida"
+    ```bash
+    Llamando otra vez...
+    Llamando otra vez...
+    Llamando otra vez...
+    ...
+    RecursionError: maximum recursion depth exceeded
+    ```
+
+    En este código, la función `sin_fin()` **nunca alcanza un punto de parada** porque no tiene una condición que
+    limite las llamadas recursivas.  
+    Python detecta esto y **detiene la ejecución automáticamente** cuando se supera el límite de llamadas
+    permitidas, para evitar que el programa colapse.
+& 
