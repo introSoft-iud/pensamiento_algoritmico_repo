@@ -156,3 +156,36 @@ Por ejemplo:
 Observa que `a` y `b` apuntan a la **misma dirección en memoria**, ya que Python optimiza el almacenamiento de valores inmutables (como los enteros pequeños) reutilizando el mismo espacio.  
 En cambio, `c` tiene una dirección distinta porque contiene otro valor.
 
+??? question "Si `a = 3` y `b = a`, ¿qué ocurre con la memoria?"
+    Cuando escribimos:
+
+    === "Código"
+        ```python
+        a = 3
+        b = a
+        print(id(a), id(b))
+        ```
+
+    === "Salida"
+        ```bash
+        140356812509040 140356812509040
+        ```
+
+    Tanto `a` como `b` **apuntan al mismo lugar en memoria**.  
+    Esto ocurre porque los números enteros son **inmutables** en Python, y el intérprete optimiza el uso de memoria reutilizando la misma dirección para valores idénticos.
+
+    Si luego modificamos `b`:
+
+    === "Código"
+        ```python
+        b = 5
+        print(id(a), id(b))
+        ```
+
+    === "Salida"
+        ```bash
+        140356812509040 140356812509120
+        ```
+
+    Ahora `b` apunta a una **nueva dirección en memoria**, ya que su valor cambió.  
+    En consecuencia, `a` y `b` ya no hacen referencia al mismo objeto.
