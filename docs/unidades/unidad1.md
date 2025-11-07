@@ -285,4 +285,297 @@ No significa que \( a = a + 1 \) sea una igualdad posible (como en matemáticas)
 En el computador, como en un **ábaco**, siempre estamos **actualizando y moviendo valores en la memoria**.  
 Cada operación implica **leer un valor**, **realizar un cálculo**, y luego **almacenar el resultado** nuevamente en algún lugar (generalmente, en la misma variable o en otra nueva).
 
-Así, el computador actúa como un operador que mueve cuentas en el ábaco, cambiando las posiciones para reflejar el nuevo estado de los datos en memoria.
+Así, el computador actúa como un operador que mueve fichas en el ábaco, cambiando las posiciones para reflejar el nuevo estado de los datos en memoria.
+
+
+Podemos observar cómo funcionan otros **operadores** en Python, usando distintas variables y operaciones básicas:
+
+=== "Código"
+    ```python
+    # Operadores aritméticos
+    x = 10
+    y = 4
+
+    print("Suma:", x + y)        # Operador de suma
+    print("Resta:", x - y)       # Operador de resta
+    print("Multiplicación:", x * y)  # Operador de multiplicación
+    print("División:", x / y)    # División con resultado decimal
+    print("División entera:", x // y) # División entera (sin decimales)
+    print("Módulo:", x % y)      # Resto de la división
+    print("Potencia:", x ** y)   # Exponente
+    ```
+
+=== "Salida"
+    ```bash
+    Suma: 14
+    Resta: 6
+    Multiplicación: 40
+    División: 2.5
+    División entera: 2
+    Módulo: 2
+    Potencia: 10000
+    ```
+
+---
+
+También existen **operadores de comparación**, que permiten comparar valores y devuelven `True` o `False` según el resultado:
+
+=== "Código"
+    ```python
+    a = 5
+    b = 8
+
+    print(a == b)  # ¿a es igual a b?
+    print(a != b)  # ¿a es diferente de b?
+    print(a > b)   # ¿a es mayor que b?
+    print(a < b)   # ¿a es menor que b?
+    print(a >= 5)  # ¿a es mayor o igual que 5?
+    print(b <= 8)  # ¿b es menor o igual que 8?
+    ```
+
+=== "Salida"
+    ```bash
+    False
+    True
+    False
+    True
+    True
+    True
+    ```
+
+---
+
+Y finalmente, los **operadores lógicos**, que permiten combinar condiciones:
+
+=== "Código"
+    ```python
+    edad = 20
+    tiene_licencia = True
+
+    print(edad > 18 and tiene_licencia)  # True si ambas condiciones son verdaderas
+    print(edad < 18 or tiene_licencia)   # True si al menos una condición es verdadera
+    print(not tiene_licencia)            # Invierte el valor lógico
+    ```
+
+=== "Salida"
+    ```bash
+    True
+    True
+    False
+    ```
+
+Estos operadores son la base de las **expresiones lógicas y aritméticas** en cualquier programa: permiten combinar y transformar valores para tomar decisiones, realizar cálculos o controlar el flujo de ejecución.
+
+### Orden de las Operaciones
+
+Cuando en una expresión aparecen varios **operadores**, el orden en que se evalúan **depende de las reglas de precedencia**.  
+Python sigue una jerarquía muy similar a la de las matemáticas: primero las operaciones con mayor prioridad y, en caso de igual precedencia, evalúa **de izquierda a derecha** (salvo en algunos casos específicos como la potenciación).
+
+---
+
+#### Precedencia de operadores en Python (de mayor a menor prioridad)
+
+| Prioridad | Operador(es) | Descripción |
+|------------|--------------|-------------|
+| 1 | `()` | Paréntesis: se evalúan primero |
+| 2 | `**` | Potenciación |
+| 3 | `+x`, `-x`, `~x` | Unarios: positivo, negativo, negación bit a bit |
+| 4 | `*`, `/`, `//`, `%` | Multiplicación, división, división entera y módulo |
+| 5 | `+`, `-` | Suma y resta |
+| 6 | `<<`, `>>` | Desplazamientos de bits |
+| 7 | `&` | AND bit a bit |
+| 8 | `^` | XOR bit a bit |
+| 9 | `|` | OR bit a bit |
+| 10 | `<`, `<=`, `>`, `>=`, `==`, `!=` | Comparaciones |
+| 11 | `not` | Negación lógica |
+| 12 | `and` | Conjunción lógica |
+| 13 | `or` | Disyunción lógica |
+| 14 | `=`, `+=`, `-=`, `*=`, `/=`, `//=`, `%=` | Asignación y operadores compuestos |
+
+---
+
+#### Ejemplo 1: Precedencia aritmética
+
+=== "Código"
+    ```python
+    resultado = 2 + 3 * 4
+    print(resultado)
+    ```
+
+=== "Salida"
+    ```bash
+    14
+    ```
+
+Primero se evalúa la **multiplicación** (`3 * 4 = 12`) y luego la **suma** (`2 + 12 = 14`).
+
+---
+
+#### Ejemplo 2: Uso de paréntesis
+
+=== "Código"
+    ```python
+    resultado = (2 + 3) * 4
+    print(resultado)
+    ```
+
+=== "Salida"
+    ```bash
+    20
+    ```
+
+El uso de **paréntesis** cambia el orden de evaluación: primero se suma `2 + 3 = 5`, y luego se multiplica `5 * 4 = 20`.
+
+---
+
+#### Ejemplo 3: Mezcla de operadores lógicos y comparaciones
+
+=== "Código"
+    ```python
+    x = 5
+    print(x > 2 and x < 10)
+    print(x > 2 or x < 4)
+    print(not(x > 2))
+    ```
+
+=== "Salida"
+    ```bash
+    True
+    True
+    False
+    ```
+
+Python evalúa primero las **comparaciones**, luego aplica los **operadores lógicos** según su prioridad (`not` → `and` → `or`).
+
+Los **paréntesis** tienen la **mayor prioridad** en Python y se utilizan para **forzar el orden de evaluación** de una expresión.  
+Todo lo que está dentro de paréntesis se evalúa primero.  
+Por ejemplo, \(2 * (3 - 1)\) produce `4`, y \((1 + 1) ** (5 - 2)\) produce `8`.  
+
+Además de modificar el orden, los paréntesis ayudan a **hacer más legible** una expresión, incluso cuando no cambian el resultado.  
+Por ejemplo, escribir `(minuto * 100) / 60` es más claro que `minuto * 100 / 60`, aunque ambos dan el mismo valor.
+
+Después de los paréntesis, el siguiente operador con mayor precedencia es la **potenciación (`**`)**.  
+Esto significa que:
+
+=== "Código"
+    ```python
+    print(2**1 + 1)   # 3, no 4
+    print(3 * 1**3)   # 3, no 27
+    ```
+
+En ambos casos, la potencia se calcula antes que las demás operaciones.
+
+La **multiplicación** y las **divisiones** (`/`, `//`, `%`) tienen la misma prioridad, superior a la de la **suma** y la **resta**, que también comparten el mismo nivel de precedencia.  
+Así:
+
+=== "Código"
+    ```python
+    print(2 * 3 - 1)   # 5, no 4
+    print(5 - 2 * 2)   # 1, no 6
+    ```
+
+Los operadores del mismo nivel se evalúan **de izquierda a derecha**, una propiedad conocida como **asociatividad izquierda**.  
+Por ejemplo:
+
+=== "Código"
+    ```python
+    print(6 - 3 + 2)   # 5
+    ```
+
+Primero se realiza la resta `(6 - 3 = 3)`, y luego la suma `(3 + 2 = 5)`.  
+Si el orden fuera de derecha a izquierda, el resultado sería distinto: \(6 - (3 + 2) = 1\).
+
+> 💡 Nota: En matemáticas a veces se usa el acrónimo **PEMDAS**, pero en Python **multiplicación y división** tienen igual precedencia, al igual que **suma y resta**, y se evalúan siempre **de izquierda a derecha**.
+
+Existe una **excepción importante**: el operador de **potenciación (`**`)** se evalúa **de derecha a izquierda**.  
+Por eso, siempre conviene usar paréntesis para dejar explícito el orden deseado:
+
+=== "Código"
+    ```python
+    print(2 ** 3 ** 2)     # 512  → se evalúa como 2 ** (3 ** 2)
+    print((2 ** 3) ** 2)   # 64   → se evalúa como (2 ** 3) ** 2
+    ```
+### Operaciones con cadenas de texto
+
+En Python, las **cadenas de texto** (`str`) no se comportan como los números.  
+No es posible realizar sobre ellas operaciones matemáticas como restas, divisiones o multiplicaciones entre cadenas.  
+Por ejemplo, los siguientes intentos producen errores:
+
+=== "Código"
+    ```python
+    saludo = "Hola"
+    mensaje = "123"
+
+    print(mensaje - 1)        # ❌ Error
+    print("Hola" / 2)         # ❌ Error
+    print(saludo * "mundo")   # ❌ Error
+    print("10" + 5)           # ❌ Error
+    ```
+
+Las operaciones anteriores no tienen sentido para cadenas, porque los operadores aritméticos están definidos solo para tipos numéricos.
+
+---
+
+#### El operador `+` en cadenas: concatenación
+
+El operador `+` **sí funciona** con cadenas, pero su significado cambia.  
+En lugar de sumar, **concatena** —es decir, une las cadenas una detrás de otra.
+
+=== "Código"
+    ```python
+    nombre = "Python"
+    version = " 3.12"
+    print(nombre + version)
+    ```
+
+=== "Salida"
+    ```bash
+    Python 3.12
+    ```
+
+Observa que el espacio antes de `"3.12"` forma parte de la segunda cadena, lo que permite separar correctamente las palabras al concatenarlas.
+
+---
+
+#### El operador `*` en cadenas: repetición
+
+El operador `*` también funciona con cadenas, pero en este caso **repite** su contenido tantas veces como indique el número entero que lo acompaña.
+
+=== "Código"
+    ```python
+    palabra = "Hola "
+    print(palabra * 3)
+    ```
+
+=== "Salida"
+    ```bash
+    Hola Hola Hola 
+    ```
+
+El primer operando debe ser una **cadena** y el segundo un **entero**.  
+Esta relación se parece a la multiplicación repetida de números: así como \(4 \times 3 = 4 + 4 + 4\),  
+la expresión `"Hola " * 3` equivale a `"Hola " + "Hola " + "Hola "`.
+
+---
+
+Aunque `+` y `*` se comportan de forma análoga a las operaciones matemáticas, hay una diferencia importante:  
+las cadenas **no cambian su valor original** cuando se concatenan o repiten.  
+Cada operación crea una **nueva cadena en memoria**, lo que refleja el carácter **inmutable** de los objetos tipo `str` en Python.
+
+!!! note "Sobrecarga de operadores"
+
+Cuando un mismo **operador** puede tener **más de un significado** dependiendo del tipo de datos con el que se use, hablamos de **sobrecarga de operadores** (*operator overloading*).
+
+Por ejemplo, en Python:
+- `+` **suma** números (`2 + 3 = 5`),  
+  pero **concatena** cadenas (`"Hola" + "Mundo" = "HolaMundo"`).  
+- `*` **multiplica** números (`4 * 3 = 12`),  
+  pero **repite** cadenas (`"ha" * 3 = "hahaha"`).
+
+Esto ocurre porque cada tipo de dato (`int`, `float`, `str`, etc.) tiene su propia **implementación interna** de los operadores.  
+Python interpreta qué hacer según el **tipo de los operandos** involucrados.
+
+La sobrecarga de operadores **también existe en otros lenguajes**, como **C++**, **Java**, o **Kotlin**, aunque no todos la manejan igual:
+- En **C++**, el programador puede **definir manualmente** cómo debe comportarse un operador para una clase personalizada.
+- En **Java**, los operadores no pueden redefinirse, pero algunos tipos integrados, como `String`, también tienen sobrecarga implícita (por ejemplo, `+` concatena textos).
+La sobrecarga de operadores hace que el código sea más **intuitivo y expresivo**, siempre que se use con claridad y coherencia.
