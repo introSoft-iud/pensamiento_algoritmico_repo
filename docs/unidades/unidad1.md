@@ -579,3 +579,200 @@ La sobrecarga de operadores **también existe en otros lenguajes**, como **C++**
 - En **C++**, el programador puede **definir manualmente** cómo debe comportarse un operador para una clase personalizada.
 - En **Java**, los operadores no pueden redefinirse, pero algunos tipos integrados, como `String`, también tienen sobrecarga implícita (por ejemplo, `+` concatena textos).
 La sobrecarga de operadores hace que el código sea más **intuitivo y expresivo**, siempre que se use con claridad y coherencia.
+
+### Lectura y escritura de valores en variables
+
+En Python, una vez que guardamos datos en una variable, podemos **mostrar su contenido** o **modificarlo** mediante funciones integradas.  
+Las dos más comunes son `print()` y `input()`.
+
+---
+
+#### La función `print()`
+
+La función `print()` se usa para **mostrar información en pantalla**.  
+Puede recibir uno o varios argumentos, que se imprimen en el orden en que aparecen, separados por un espacio.
+
+=== "Código"
+    ```python
+    nombre = "Ana"
+    edad = 25
+    print("Hola,", nombre, "tienes", edad, "años.")
+    ```
+
+=== "Salida"
+    ```bash
+    Hola, Ana tienes 25 años.
+    ```
+
+También es posible **formatear el texto** para que se vea más claro.  
+Por ejemplo, usando **f-strings**, una forma moderna y práctica de insertar variables dentro de una cadena:
+
+=== "Código"
+    ```python
+    nombre = "Ana"
+    edad = 25
+    print(f"Hola, {nombre}, tienes {edad} años.")
+    ```
+
+=== "Salida"
+    ```bash
+    Hola, Ana, tienes 25 años.
+    ```
+
+Las llaves `{}` permiten incrustar directamente el valor de una variable dentro de la cadena.
+
+---
+
+#### La función `input()`
+
+La función `input()` se utiliza para **leer datos que el usuario escribe por teclado**.  
+Por defecto, siempre devuelve un valor de tipo `str` (cadena de texto), incluso si el usuario escribe números.
+
+=== "Código"
+    ```python
+    nombre = input("¿Cuál es tu nombre? ")
+    print(f"Hola, {nombre}!")
+    ```
+
+=== "Salida"
+    ```bash
+    ¿Cuál es tu nombre? Juan
+    Hola, Juan!
+    ```
+
+Si queremos que el valor introducido se interprete como un número, debemos **convertirlo** explícitamente usando `int()` o `float()`:
+
+=== "Código"
+    ```python
+    edad = int(input("¿Cuántos años tienes? "))
+    print(f"El próximo año tendrás {edad + 1} años.")
+    ```
+
+=== "Salida"
+    ```bash
+    ¿Cuántos años tienes? 30
+    El próximo año tendrás 31 años.
+    ```
+
+---
+
+!!! tip "Diferencia entre `print()` e `input()`"
+    - `print()` **muestra** información en pantalla.  
+    - `input()` **lee** información del usuario y **la almacena** como texto en una variable.  
+### Funciones
+
+`print()` e `input()` son ejemplos de **funciones**, es decir, **bloques de código reutilizables** que realizan una tarea específica.  
+Una función puede **recibir datos de entrada** (llamados *parámetros* o *argumentos*) y **devolver un resultado** o simplemente ejecutar una acción.
+
+Las funciones nos ayudan a **organizar** el código, **evitar repeticiones** y **hacer los programas más claros**.
+
+---
+
+#### Definir funciones propias
+
+Podemos crear nuestras propias funciones en Python usando la palabra reservada `def`, seguida del **nombre de la función**, una lista opcional de **parámetros entre paréntesis**, y dos puntos `:`.  
+El cuerpo de la función va indentado (con sangría).
+
+=== "Código"
+    ```python
+    def saludar():
+        print("¡Hola, bienvenido al programa!")
+    ```
+
+Esta función no recibe parámetros ni devuelve un valor.  
+Para **ejecutarla**, simplemente la llamamos por su nombre:
+
+=== "Código"
+    ```python
+    saludar()
+    ```
+
+=== "Salida"
+    ```bash
+    ¡Hola, bienvenido al programa!
+    ```
+
+---
+
+#### Funciones con parámetros
+
+Una función puede recibir información para trabajar con ella.  
+Por ejemplo:
+
+=== "Código"
+    ```python
+    def saludar_usuario(nombre):
+        print(f"Hola, {nombre}, ¡me alegra verte!")
+    ```
+
+Al llamar la función, le pasamos un valor entre paréntesis:
+
+=== "Código"
+    ```python
+    saludar_usuario("Camilo")
+    ```
+
+=== "Salida"
+    ```bash
+    Hola, Camilo, ¡me alegra verte!
+    ```
+
+---
+
+#### Funciones que devuelven un valor
+
+Algunas funciones no solo ejecutan una acción, sino que **devuelven un resultado** usando la palabra `return`.
+
+=== "Código"
+    ```python
+    def sumar(a, b):
+        resultado = a + b
+        return resultado
+    ```
+
+Podemos guardar el valor que devuelve la función en una variable:
+
+=== "Código"
+    ```python
+    x = sumar(5, 7)
+    print(x)
+    ```
+
+=== "Salida"
+    ```bash
+    12
+    ```
+
+---
+
+!!! note "Parámetros, sentencias y retorno"
+    - Los **parámetros** son los nombres de las variables que recibe una función.  
+    - Las **sentencias** o *statements* son las instrucciones que se ejecutan dentro del cuerpo de la función.  
+    - El comando `return` indica el **valor de salida** que la función devuelve al finalizar su ejecución.
+
+---
+
+#### Ejemplo combinado
+
+=== "Código"
+    ```python
+    def calcular_area_rectangulo(base, altura):
+        area = base * altura
+        return area
+
+    b = float(input("Base del rectángulo: "))
+    h = float(input("Altura del rectángulo: "))
+
+    print(f"El área del rectángulo es {calcular_area_rectangulo(b, h)}")
+    ```
+
+=== "Salida"
+    ```bash
+    Base del rectángulo: 5
+    Altura del rectángulo: 3
+    El área del rectángulo es 15.0
+    ```
+
+---
+
+Las funciones son **fundamentales** en cualquier programa: permiten dividir el código en partes más pequeñas, **reutilizables** y **fáciles de mantener**.
