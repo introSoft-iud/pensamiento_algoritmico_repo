@@ -989,13 +989,13 @@ Cada vez que `cuadrado()` se ejecuta, devuelve un valor que se usa dentro de `su
     - Este enfoque facilita la **depuración** (debugging) y el **mantenimiento** del programa, ya que cada función puede probarse de forma independiente.
 
 
-!!! warning "Prepárate... ¡aquí es donde puede explotar tu cabeza! 💥"
-    Lo que vas a ver a continuación es uno de los conceptos más fascinantes (y a la vez más desafiantes) de la programación: **la recursión**.
 
 ---
 
 ### Recursión
-
+!!! warning "Prepárate... ¡aquí es donde puede explotar tu cabeza! 💥"
+    Lo que vas a ver a continuación es uno de los conceptos más fascinantes (y a la vez más desafiantes) de la programación: **la recursión**.
+![alt text](image-2.png)
 La **recursión** ocurre cuando una **función se llama a sí misma** durante su ejecución.  
 En lugar de repetir código con bucles, una función recursiva **se repite a sí misma** hasta alcanzar una condición que detiene el proceso.
 
