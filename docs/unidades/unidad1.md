@@ -79,13 +79,42 @@ En programación, esto se logra con el uso de variables. Por ejemplo, si hago:
 ```python
 a = 3
 ```
+El intérprete de Python asigna a un sector de la memoria la etiqueta "`a`" (similar a "`don_juan`" en el ejemplo anterior) y guarda en este sector de la memoria el valor `3`.  
 
-El intérprete de Python asigna a un sector de la memoria la etiqueta "a" (similar a "don_juan" en el ejemplo anterior) y guarda en este sector de la memoria el valor 3. Tres es un número entero, por lo tanto, el espacio de memoria (el apartamento) reservado para `a` debe ser lo suficientemente grande para albergar un entero en binario, es decir, \(3\) en binario es \(11_2\).
+Tres es un número entero, por lo tanto, el espacio de memoria (el apartamento) reservado para `a` debe ser lo suficientemente grande para albergar un **entero en binario**.  
+
+En la mayoría de los sistemas modernos, los enteros se representan en **32 o 64 bits**, dependiendo de la arquitectura del procesador.  
+Cada **bit** puede almacenar un valor de **0** o **1**, y en conjunto estos bits forman el valor binario.  
+Por ejemplo, el número 3 en binario (de 8 bits para simplificar) se representa como:
+
+$$
+3_{10} = 00000011_2
+$$
+
+Cada bit tiene un peso asociado (potencia de 2):  
+
+| Bit | Peso \(2^n\) | Valor |
+|-----|---------------|--------|
+| 7   | 128           | 0      |
+| 6   | 64            | 0      |
+| 5   | 32            | 0      |
+| 4   | 16            | 0      |
+| 3   | 8             | 0      |
+| 2   | 4             | 0      |
+| 1   | 2             | 1      |
+| 0   | 1             | 1      |
+
+La suma de los bits encendidos (1) nos da el valor decimal:
+
+$$
+2^1 + 2^0 = 3
+$$
 
 Podemos verificar que efectivamente se trata de un entero haciendo:
 
 === "Código"
     ```python
+    a = 3
     type(a)
     ```
 
