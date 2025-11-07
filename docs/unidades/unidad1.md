@@ -659,7 +659,7 @@ Si queremos que el valor introducido se interprete como un número, debemos **co
     - `print()` **muestra** información en pantalla.  
     - `input()` **lee** información del usuario y **la almacena** como texto en una variable.  
 
-### Funciones
+## Funciones
 
 `print()` e `input()` son ejemplos de **funciones**, es decir, **bloques de código reutilizables** que realizan una tarea específica.  
 Una función puede **recibir datos de entrada** (llamados *parámetros* o *argumentos*) y **devolver un resultado** o simplemente ejecutar una acción.
@@ -674,6 +674,20 @@ El cuerpo de la función va indentado (con sangría).
     def saludar():
         print("¡Hola, bienvenido al programa!")
     ```
+
+Esta función no recibe parámetros ni devuelve un valor.  
+Para **ejecutarla**, simplemente la llamamos por su nombre:
+
+=== "Código"
+    ```python
+    saludar()
+    ```
+
+=== "Salida"
+    ```bash
+    ¡Hola, bienvenido al programa!
+    ```
+
 
 !!! note "La importancia de la indentación en Python"
     En **Python**, la **indentación** (los espacios o tabulaciones al inicio de una línea) **define los bloques de código**.  
@@ -698,21 +712,6 @@ El cuerpo de la función va indentado (con sangría).
     ```
 
     En cambio, en Python, la indentación **es parte de la sintaxis**, y por tanto **obligatoria**.
-
-Esta función no recibe parámetros ni devuelve un valor.  
-Para **ejecutarla**, simplemente la llamamos por su nombre:
-
-=== "Código"
-    ```python
-    saludar()
-    ```
-
-=== "Salida"
-    ```bash
-    ¡Hola, bienvenido al programa!
-    ```
-
----
 
 Una función puede recibir información para trabajar con ella.  
 Por ejemplo:
@@ -789,4 +788,123 @@ Vemos otro ejemplo:
 
 ---
 
-Las funciones son **fundamentales** en cualquier programa: permiten dividir el código en partes más pequeñas, **reutilizables** y **fáciles de mantener**.
+Las funciones permiten dividir el código en partes más pequeñas, **reutilizables** y **fáciles de mantener**.
+
+### Alcance de las variables: globales y locales
+
+La **indentación** en las funciones no solo organiza visualmente el código: también ayuda a **delimitar el contexto** (o *scope*) donde las variables existen y son reconocidas por el programa.
+
+El **contexto** define **desde dónde** puede accederse a una variable.  
+Python distingue principalmente dos tipos de contexto:  
+- **Global**: fuera de cualquier función.  
+- **Local**: dentro de una función.
+
+---
+
+#### Variables globales
+
+Una **variable global** es aquella que se declara **fuera de cualquier función** y puede ser utilizada por todo el programa (en cualquier parte del archivo).
+
+=== "Código"
+    ```python
+    mensaje = "Hola desde el ámbito global"
+
+    def saludar():
+        print(mensaje)
+
+    saludar()
+    print("Fuera de la función:", mensaje)
+    ```
+
+=== "Salida"
+    ```bash
+    Hola desde el ámbito global
+    Fuera de la función: Hola desde el ámbito global
+    ```
+
+En este ejemplo, la variable `mensaje` está definida en el contexto **global**, por lo que puede ser leída dentro y fuera de la función.
+
+---
+
+#### Variables locales
+
+Una **variable local** se crea **dentro de una función** y solo existe **mientras la función se ejecuta**.  
+Fuera de ella, la variable **no es accesible**.
+
+=== "Código"
+    ```python
+    def saludar():
+        texto = "Hola desde el ámbito local"
+        print(texto)
+
+    saludar()
+    print(texto)  # Error: la variable no existe fuera de la función
+    ```
+
+=== "Salida"
+    ```bash
+    Hola desde el ámbito local
+    NameError: name 'texto' is not defined
+    ```
+
+Aquí `texto` es una variable local que solo vive dentro del bloque indentado de la función `saludar()`.
+
+---
+
+#### Uso del mismo nombre en contextos distintos
+
+Si una variable local tiene el **mismo nombre** que una global, Python prioriza la **versión local** dentro de la función.
+
+=== "Código"
+    ```python
+    mensaje = "Hola desde el ámbito global"
+
+    def saludar():
+        mensaje = "Hola desde el ámbito local"
+        print(mensaje)
+
+    saludar()
+    print(mensaje)
+    ```
+
+=== "Salida"
+    ```bash
+    Hola desde el ámbito local
+    Hola desde el ámbito global
+    ```
+
+En este caso, la variable `mensaje` dentro de la función **oculta temporalmente** la global mientras se ejecuta el bloque local.
+
+---
+
+#### Modificar variables globales dentro de una función
+
+Por defecto, no se puede modificar una variable global desde dentro de una función, a menos que se declare explícitamente con la palabra clave `global`.
+
+=== "Código"
+    ```python
+    contador = 0
+
+    def incrementar():
+        global contador
+        contador = contador + 1
+
+    incrementar()
+    print(contador)
+    ```
+
+=== "Salida"
+    ```bash
+    1
+    ```
+
+El uso de `global` le indica al intérprete que la variable `contador` **ya existe en el ámbito global** y que la función debe modificar esa misma referencia, en lugar de crear una nueva variable local.
+
+---
+
+!!! note "Resumen sobre contexto y alcance"
+    - **Contexto global:** variables definidas fuera de las funciones; accesibles desde cualquier parte del código.  
+    - **Contexto local:** variables creadas dentro de una función; solo existen mientras esa función se ejecuta.  
+    - **Sombra de variables:** cuando una variable local tiene el mismo nombre que una global, la local tiene prioridad dentro del bloque.  
+    - **Palabra clave `global`:** permite modificar variables globales desde funciones, aunque debe usarse con precaución para evitar errores difíciles de rastrear.
+
