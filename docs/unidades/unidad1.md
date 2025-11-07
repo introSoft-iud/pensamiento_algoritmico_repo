@@ -992,6 +992,137 @@ Cada vez que `cuadrado()` se ejecuta, devuelve un valor que se usa dentro de `su
 
 ---
 
+````markdown
+### Condicionales: `if`, `elif` y `else`
+
+En programación, muchas veces necesitamos que el código **tome decisiones** dependiendo de una condición.  
+En Python, estas decisiones se controlan con las **estructuras condicionales** `if`, `elif` y `else`.
+
+Cada condición se evalúa como **verdadera (`True`)** o **falsa (`False`)**, y según el resultado, el programa ejecuta diferentes bloques de código.
+
+---
+
+#### Estructura básica de un condicional
+
+=== "Código"
+```python
+if condición:
+    # bloque que se ejecuta si la condición es verdadera
+````
+
+Si la condición se cumple (`True`), Python ejecuta el bloque indentado.
+Si no, lo omite y continúa con el resto del programa.
+
+---
+
+#### Ejemplo simple
+
+=== "Código"
+
+```python
+edad = 18
+
+if edad >= 18:
+    print("Eres mayor de edad.")
+```
+
+=== "Salida"
+
+```bash
+Eres mayor de edad.
+```
+
+En este caso, la expresión `edad >= 18` es **verdadera**, por lo que se ejecuta el bloque asociado al `if`.
+
+---
+
+#### Estructura con `else`
+
+Podemos usar `else` para definir un bloque alternativo, que se ejecuta si la condición **no se cumple**.
+
+=== "Código"
+
+```python
+edad = 16
+
+if edad >= 18:
+    print("Eres mayor de edad.")
+else:
+    print("Eres menor de edad.")
+```
+
+=== "Salida"
+
+```bash
+Eres menor de edad.
+```
+
+---
+
+#### Uso de `elif` (else if)
+
+Cuando hay **más de una condición posible**, usamos `elif` para comprobar casos adicionales.
+Python evalúa las condiciones **en orden** y ejecuta **solo el primer bloque que sea verdadero**.
+
+=== "Código"
+
+```python
+nota = 85
+
+if nota >= 90:
+    print("Excelente")
+elif nota >= 75:
+    print("Aprobado")
+else:
+    print("Reprobado")
+```
+
+=== "Salida"
+
+```bash
+Aprobado
+```
+
+La condición `nota >= 75` es verdadera, por lo que el programa ejecuta ese bloque y **no evalúa los demás**.
+
+---
+
+#### Ejemplo anidado
+
+También es posible **anidar condicionales**, aunque conviene hacerlo con cuidado para no perder claridad:
+
+=== "Código"
+
+```python
+temperatura = 30
+
+if temperatura > 25:
+    print("Hace calor.")
+    if temperatura > 35:
+        print("¡Mucho calor! 💦")
+else:
+    print("Hace frío.")
+```
+
+=== "Salida"
+
+```bash
+Hace calor.
+```
+
+---
+
+!!! tip "Resumen de la estructura condicional"
+- `if`: evalúa la primera condición.
+- `elif`: evalúa condiciones adicionales si las anteriores no se cumplieron.
+- `else`: se ejecuta solo si **ninguna condición previa** fue verdadera.
+
+Las estructuras condicionales son esenciales para que los programas **tomen decisiones dinámicas** según los datos o las entradas del usuario.
+
+```
+```
+
+
 ### Recursión
 !!! warning "Prepárate... ¡aquí es donde puede explotar tu cabeza! 💥"
     Lo que vas a ver a continuación es uno de los conceptos más fascinantes (y a la vez más desafiantes) de la programación: **la recursión**.
