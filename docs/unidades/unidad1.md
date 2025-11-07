@@ -22,9 +22,8 @@ La conexión entre software y hardware puede ser entendida a partir del siguient
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/HjneAhCy2N4" frameborder="0" allowfullscreen></iframe>
 
-## Sesión 2: Variables y estructuras de datos
 
-### Los Lenguajes de Programación
+## Los Lenguajes de Programación
 
 En este curso usaremos Python como nuestra puerta de entrada al mundo de la programación. Sin embargo, Python es solo uno de los posibles lenguajes en los que podemos dar instrucciones a los computadores. Python forma parte de lo que conocemos como lenguajes formales.
 
@@ -52,10 +51,21 @@ Créelo o no, eso es prácticamente todo. Cada programa que has usado, sin impor
 
 Aunque esto puede parecer un poco vago, volveremos a este tema más adelante cuando hablemos de algoritmos. 
 
-### Variables
-Una variable es un nombre que usamos para hacer referencia a un valor que guardamos en la memoria del computador.
+##  Variables, Valores y Operadores
 
-Para imaginarlo mejor, supongamos que la memoria de un computador es tan grande como la ciudad de Medellín, que tiene aproximadamente 2.5 millones de habitantes y una superficie de 380 km².
+Una **variable** es un nombre que usamos para hacer referencia a un valor que guardamos en la memoria del computador.  
+
+Un **valor** es una **unidad de información** que puede ser almacenada y manipulada por un programa.  
+Los valores pueden ser de distintos **tipos de datos**, como:
+
+- **Números enteros (`int`)**: `3`, `-12`, `250`
+- **Números decimales (`float`)**: `3.14`, `-0.001`, `2.5`
+- **Cadenas de texto (`str`)**: `"Hola"`, `'Python'`
+- **Valores lógicos (`bool`)**: `True`, `False`
+
+Cada valor ocupa un espacio físico en la memoria del computador, y las variables sirven como etiquetas que nos permiten acceder a esos espacios fácilmente.
+
+Supongamos que la memoria de un computador es tan grande como la ciudad de **Medellín**, que tiene aproximadamente **2.5 millones de habitantes** y una superficie de **380 km²**.  
 
 Ahora bien, piensa en una unidad SSD (unidad de estado sólido) expandida hasta cubrir toda esa área. Si cada celda de memoria (trampa de electrones que almacena un bit) fuera del tamaño de un apartamento de 20 nm × 20 nm, y se construyeran 1000 pisos de estos apartamentos uno sobre otro (como edificios), esa “Medellín‑SSD” estaría completamente cubierta por edificios de memoria.
 
@@ -189,7 +199,7 @@ En cambio, `c` tiene una dirección distinta porque contiene otro valor.
 
     Ahora `b` apunta a una **nueva dirección en memoria**, ya que su valor cambió.  
     En consecuencia, `a` y `b` ya no hacen referencia a la misma variable.
-## Operadores
+### Operadores
 
 Hemos introducido el concepto de **variable**, y al mismo tiempo vimos cómo guardar valores en ellas.  
 En el proceso, sin notarlo, usamos el símbolo `=`, que es un **operador** llamado **operador de asignación**.
@@ -214,8 +224,6 @@ El **operador de asignación** `=` **no compara igualdad**, sino que **toma el v
 En este ejemplo, el operador `=` le indica al intérprete que **asigne** el resultado de `a + 2` (es decir, 7) a la variable `b`.
 
 ---
-
-### Diferencia entre el símbolo "=" en matemáticas y en Python
 
 En **matemáticas**, la expresión
 
@@ -249,4 +257,32 @@ Si quisiéramos comprobar **igualdad lógica** en Python, usamos el operador `==
     True
     ```
 
+
 El operador `==` **compara** los valores de ambos lados y devuelve `True` si son iguales, o `False` en caso contrario.
+
+Es importante comprender esto porque, por ejemplo, podría parecer  poco intuitivo pensar que la expresión siguiente representa una **igualdad matemática**
+
+=== "Código"
+    ```python
+    a = 3
+    print(a)
+
+    a = a + 1
+    print(a)
+    ```
+
+=== "Salida"
+    ```bash
+    3
+    4
+    ```
+
+En la primera línea, `a = 3` **asigna** el valor `3` a la variable `a`.  
+En la instrucción `a = a + 1`, Python **toma el valor actual de `a` (3)**, **le suma 1**, y **guarda el resultado (4)** nuevamente en la misma variable.  
+No significa que \( a = a + 1 \) sea una igualdad posible (como en matemáticas), sino una **instrucción secuencial**:  
+> “Toma el valor de `a`, súmale 1, y guarda el nuevo valor en `a`”.
+
+En el computador, como en un **ábaco**, siempre estamos **actualizando y moviendo valores en la memoria**.  
+Cada operación implica **leer un valor**, **realizar un cálculo**, y luego **almacenar el resultado** nuevamente en algún lugar (generalmente, en la misma variable o en otra nueva).
+
+Así, el computador actúa como un operador que mueve cuentas en el ábaco, cambiando las posiciones para reflejar el nuevo estado de los datos en memoria.
