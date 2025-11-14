@@ -1255,6 +1255,8 @@ Para ejecutarlo desde tu terminal, navega hasta la carpeta donde guardaste el ar
 python3 mi_tortuga.py
 ```
 
+![alt text](image-4.png)
+
 
 !!! question "Reto: simula el comportamiento de la tortuga con lo que sabes hasta ahora"
     Con lo que has aprendido hasta este punto (variables, `print()`, funciones, condicionales), intenta crear un programa que **simule** lo que hace la tortuga en el ejemplo anterior:  
