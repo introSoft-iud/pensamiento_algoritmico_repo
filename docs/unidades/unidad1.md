@@ -1262,7 +1262,7 @@ La salida es la imagen
     Intenta recrear el movimiento de la tortuga únicamente con texto, usando funciones, `print()` y `input()` para pedir valores al usuario.
 
 ??? success "Ver solución esperada"
-    ![alt text](image-5.png)
+    ![alt text](image-5.png){ width="300px" }
 <!--
     ```python
     # Simulación de creación de tortuga
@@ -1299,6 +1299,7 @@ La salida es la imagen
     ```
 
     **Salida (versión gráfica):** se dibuja una “L”.
+    ![alt text](image-6.png) { width="300px"}
 
     Tu tarea es implementar esta misma lógica **solo con texto**, usando `print()`, `input()` y condicionales.
 
