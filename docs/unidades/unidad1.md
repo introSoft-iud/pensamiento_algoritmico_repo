@@ -1258,36 +1258,9 @@ python3 mi_tortuga.py
 <img src="image-4.png" alt="tortuga" width="300px"> ```
 
 
-!!! question "Reto: simula el comportamiento de la tortuga con lo que sabes hasta ahora"
-    Con lo que has aprendido hasta este punto (variables, `print()`, funciones, condicionales), intenta crear un programa que **simule** lo que hace la tortuga en el ejemplo anterior:  
-    avanzar 100 unidades y luego detenerse.  
-    No necesitas gráficos: **usa texto** para mostrar el movimiento.
+!!! question "Reto: simula el comportamiento de la tortuga usando solo print() e input()".
 
-    Piensa qué funciones puedes definir, qué mensajes mostrar y cómo representar el avance.
-
-??? success "Ver solución"
-    === "Código"
-    ```python
-    def crear_tortuga():
-        print("Tortuga creada.")
-
-    def avanzar(distancia):
-        print(f"La tortuga avanza {distancia} unidades...")
-
-    def detener():
-        print("La tortuga ha terminado su recorrido.")
-
-    # Programa principal
-    crear_tortuga()
-    avanzar(100)
-    detener()
-    ```
-
-    === "Salida"
-    ```bash
-    Tortuga creada.
-    La tortuga avanza 100 unidades...
-    La tortuga ha terminado su recorrido.
-    ```
+??? success "Ver solucion"
+    ![alt text](image-5.png)
  
 
