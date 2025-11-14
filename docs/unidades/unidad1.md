@@ -1008,7 +1008,7 @@ Cada condición se evalúa como **verdadera (`True`)** o **falsa (`False`)**, y 
 ```python
 if condición:
     # bloque que se ejecuta si la condición es verdadera
-````
+```
 
 Si la condición se cumple (`True`), Python ejecuta el bloque indentado.
 Si no, lo omite y continúa con el resto del programa.
