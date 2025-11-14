@@ -1235,10 +1235,12 @@ n! = n \times (n-1)!
     Te servirá para comprender cómo combinar variables, funciones, condicionales y ciclos para crear programas que generen **gráficos y animaciones** simples.  
 
     Da un vistazo a cómo funciona `turtle` para que empieces a familiarizarte con su uso:
-
 ### Aprendiendo a programar como una tortuga
+![alt text](image-3.png)
 
-=== "Código"
+En un archivo llamado **`mi_tortuga.py`**, guarda el siguiente código:
+
+
 ```python
 import turtle
 
@@ -1246,8 +1248,12 @@ t = turtle.Turtle()   # Crea una tortuga
 t.forward(100)        # Avanza 100 unidades
 turtle.done()         # Mantiene la ventana abierta
 ```
-=== "salida"
+Para ejecutarlo desde tu terminal, navega hasta la carpeta donde guardaste el archivo y escribe:
 
+
+```bash
+python3 mi_tortuga.py
+```
 
 
 !!! question "Reto: simula el comportamiento de la tortuga con lo que sabes hasta ahora"
