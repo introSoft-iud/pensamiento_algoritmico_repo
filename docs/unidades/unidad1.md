@@ -1299,7 +1299,7 @@ La salida es la imagen
     ```
 
     **Salida (versión gráfica):** se dibuja una “L”.
-    ![alt text](image-6.png) { width="300px"}
+    ![alt text](image-6.png){width="300px"}
 
     Tu tarea es implementar esta misma lógica **solo con texto**, usando `print()`, `input()` y condicionales.
 
