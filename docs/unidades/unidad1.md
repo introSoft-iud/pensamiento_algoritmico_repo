@@ -1227,4 +1227,59 @@ n! = n \times (n-1)!
     limite las llamadas recursivas.  
     Python detecta esto y **detiene la ejecución automáticamente** cuando se supera el límite de llamadas
     permitidas, para evitar que el programa colapse.
-& 
+## Para practicar
+
+!!! info "Un vistazo a futuro"
+    El **proyecto integrador** que desarrollarás en esta unidad y en la siguiente consiste en **construir tu propia versión simplificada de la biblioteca `turtle`**.  
+    Esta librería permite controlar una “tortuga virtual” que se mueve por la pantalla dibujando líneas con sus desplazamientos.  
+    Te servirá para comprender cómo combinar variables, funciones, condicionales y ciclos para crear programas que generen **gráficos y animaciones** simples.  
+
+    Da un vistazo a cómo funciona `turtle` para que empieces a familiarizarte con su uso:
+
+### Aprendiendo a programar como una tortuga
+
+=== "Código"
+```python
+import turtle
+
+t = turtle.Turtle()   # Crea una tortuga
+t.forward(100)        # Avanza 100 unidades
+turtle.done()         # Mantiene la ventana abierta
+```
+=== "salida"
+
+
+
+!!! question "Reto: simula el comportamiento de la tortuga con lo que sabes hasta ahora"
+    Con lo que has aprendido hasta este punto (variables, `print()`, funciones, condicionales), intenta crear un programa que **simule** lo que hace la tortuga en el ejemplo anterior:  
+    avanzar 100 unidades y luego detenerse.  
+    No necesitas gráficos: **usa texto** para mostrar el movimiento.
+
+    Piensa qué funciones puedes definir, qué mensajes mostrar y cómo representar el avance.
+
+??? success "Ver solución"
+    === "Código"
+    ```python
+    def crear_tortuga():
+        print("Tortuga creada.")
+
+    def avanzar(distancia):
+        print(f"La tortuga avanza {distancia} unidades...")
+
+    def detener():
+        print("La tortuga ha terminado su recorrido.")
+
+    # Programa principal
+    crear_tortuga()
+    avanzar(100)
+    detener()
+    ```
+
+    === "Salida"
+    ```bash
+    Tortuga creada.
+    La tortuga avanza 100 unidades...
+    La tortuga ha terminado su recorrido.
+    ```
+ 
+
