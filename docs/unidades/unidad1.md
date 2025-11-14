@@ -1255,13 +1255,51 @@ Para ejecutarlo desde tu terminal, navega hasta la carpeta donde guardaste el ar
 python3 mi_tortuga.py
 ```
 
-<img src="image-4.png" alt="tortuga" width="300px"> ```
+La salida es la imagen  
+<img src="image-4.png" alt="tortuga" width="300px">
 
+!!! question "Reto1: simula el comportamiento de la tortuga usando solo `print()` e `input()`."
+    Intenta recrear el movimiento de la tortuga únicamente con texto, usando funciones, `print()` y `input()` para pedir valores al usuario.
 
-!!! question "Reto: simula el comportamiento de la tortuga usando solo `print()` e `input()`."
-Intenta recrear el movimiento de la tortuga solo con texto, usando funciones, `print()` e incluso `input()` para pedir valores al usuario.
-
-??? success "Ver solucion esperada"
+??? success "Ver solución esperada"
     ![alt text](image-5.png)
- 
+<!--
+    ```python
+    # Simulación de creación de tortuga
+    print("Creando una tortuga simulada...")
+
+    # Pide input al usuario para la distancia (convierte a int)
+    distancia = input("Ingrese la distancia a avanzar (número entero positivo): ")
+    distancia = int(distancia)
+
+    # Condicional simple para validar (si negativo, error)
+    if distancia < 0:
+        print("Error: La distancia debe ser positiva.")
+    else:
+        # Simula el avance con print, usando operador de repetición (*) para guiones y concatenación (+) para la flecha
+        print("-" * distancia + ">")
+        
+    # Simula el mantenimiento de la "ventana" (pausa con input)
+    input("Presione Enter para cerrar la simulación...")
+    print("Simulación terminada.")
+    ```
+
+-->
+!!! question "Reto 2: *Girar y dibujar* usando solo `print()` e `input()`"
+    Ahora la tortuga no solo avanza: también gira.  
+    Observa cómo lo hace la versión gráfica:
+
+    ```python
+    import turtle
+    t = turtle.Turtle()
+    t.forward(100)
+    t.right(90)          # Gira 90 grados a la derecha
+    t.forward(100)
+    turtle.done()
+    ```
+
+    **Salida (versión gráfica):** se dibuja una “L”.
+
+    Tu tarea es implementar esta misma lógica **solo con texto**, usando `print()`, `input()` y condicionales.
+
 
