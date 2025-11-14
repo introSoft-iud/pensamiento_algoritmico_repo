@@ -1258,9 +1258,10 @@ python3 mi_tortuga.py
 <img src="image-4.png" alt="tortuga" width="300px"> ```
 
 
-!!! question "Reto: simula el comportamiento de la tortuga usando solo print() e input()".
+!!! question "Reto: simula el comportamiento de la tortuga usando solo `print()` e `input()`."
+Intenta recrear el movimiento de la tortuga solo con texto, usando funciones, `print()` e incluso `input()` para pedir valores al usuario.
 
-??? success "Ver solucion"
+??? success "Ver solucion esperada"
     ![alt text](image-5.png)
  
 
