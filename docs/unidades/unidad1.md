@@ -1285,7 +1285,15 @@ La salida es la imagen
     ```
 
 -->
-!!! question "Reto 2: *Girar y dibujar* usando solo `print()` e `input()`"
+!!! question "Reto 2: *Tortuga bajando*"
+    Crea el rastro de una tortuga moviéndose **hacia abajo** usando únicamente `print()` e `input()`.  
+    La salida esperada es similar a:
+
+    <img src="image-7.png" alt="tortuga bajando" width="250px">
+
+
+
+!!! question "Reto 3: *Girar y dibujar* usando solo `print()` e `input()`"
     Ahora la tortuga no solo avanza: también gira.  
     Observa cómo lo hace la versión gráfica:
 
@@ -1299,9 +1307,16 @@ La salida es la imagen
     ```
 
     **Salida (versión gráfica):** se dibuja una “L”.
-    
+
     ![alt text](image-6.png){width="300px"}
 
-    Tu tarea es implementar esta misma lógica **solo con texto**, usando `print()`, `input()` y condicionales.
+   
+   !!! question "Reto 4: Encapsula los comportamientos anteriores usando funciones"
+    Reescribe los retos anteriores creando **funciones** que representen los movimientos de la tortuga.  
+    Aquí tienes los prototipos sugeridos:
 
+    ```python
+    adelante(n)   # Deja el rastro de la tortuga avanzando hacia la derecha → n 'pasos'
+    abajo(n)      # Deja el rastro de la tortuga moviéndose hacia abajo ↓ n 'pasos'
+    ```
 
