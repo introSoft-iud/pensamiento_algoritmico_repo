@@ -1312,11 +1312,11 @@ La salida es la imagen
 
    
    !!! question "Reto 4: Encapsula los comportamientos anteriores usando funciones"
-    Reescribe los retos anteriores creando **funciones** que representen los movimientos de la tortuga.  
-    Aquí tienes los prototipos sugeridos:
+        Reescribe los retos anteriores creando **funciones** que representen los movimientos de la tortuga.  
+        Aquí tienes los prototipos sugeridos:
 
-    ```python
-    adelante(n)   # Deja el rastro de la tortuga avanzando hacia la derecha → n 'pasos'
-    abajo(n)      # Deja el rastro de la tortuga moviéndose hacia abajo ↓ n 'pasos'
-    ```
+        ```python
+        adelante(n)   # Deja el rastro de la tortuga avanzando hacia la derecha → n 'pasos'
+        abajo(n)      # Deja el rastro de la tortuga moviéndose hacia abajo ↓ n 'pasos'
+        ```
 
