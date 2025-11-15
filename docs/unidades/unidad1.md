@@ -1309,14 +1309,52 @@ La salida es la imagen
     **Salida (versión gráfica):** se dibuja una “L”.
 
     ![alt text](image-6.png){width="300px"}
+!!! question "Reto 4: Encapsula los comportamientos anteriores usando funciones"
+    Reescribe los retos anteriores creando **funciones** que representen los movimientos de la tortuga solo con texto.  
+    Usa las siguientes funciones como interfaz:
 
-   
-   !!! question "Reto 4: Encapsula los comportamientos anteriores usando funciones"
-        Reescribe los retos anteriores creando **funciones** que representen los movimientos de la tortuga.  
-        Aquí tienes los prototipos sugeridos:
+    ```python
+    adelante(n)   # Dibuja el movimiento hacia la derecha (→) por n pasos
+    abajo(n)      # Dibuja el movimiento hacia abajo (↓) por n pasos
+    ```
 
-        ```python
-        adelante(n)   # Deja el rastro de la tortuga avanzando hacia la derecha → n 'pasos'
-        abajo(n)      # Deja el rastro de la tortuga moviéndose hacia abajo ↓ n 'pasos'
-        ```
+    **Por ejemplo**, al ejecutar:
+
+    ```python
+    adelante(5)
+    abajo(3)
+    ```
+
+    Debería producir un patrón en forma de **L**, donde el trazo vertical queda colocado justo debajo de la punta de la flecha:
+
+    ```
+    ----->      ← avance horizontal
+         |
+         |
+         v
+    ```
+
+??? success "Ver solución esperada"
+    ```python
+    posicion = 0  # Guarda dónde terminó la tortuga después de avanzar
+
+    def adelante(pasos):
+        global posicion
+        posicion += pasos
+        print("-" * pasos + ">")
+
+    def abajo(pasos):
+        global posicion
+        for _ in range(pasos):
+            print(" " * posicion + "|")
+        print(" " * posicion + "v")
+
+    # Ejemplo de uso:
+    adelante(5)
+    abajo(3)
+    ```
+![alt text](image-9.png)
+
+
+
 
