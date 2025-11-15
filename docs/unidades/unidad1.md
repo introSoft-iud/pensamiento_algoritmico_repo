@@ -1325,31 +1325,29 @@ La salida es la imagen
     abajo(3)
     ```
 
-    Debería producir un patrón en forma de **L**
+    Debería producir un patrón en forma de **L** como en la figura
+
     ![alt text](image-9.png)
-    
-<!--
-??? success "Ver solución esperada"
+!!! question "Reto 5: La tortuga baja las escalas"
+    Ajusta tus funciones para que la tortuga pueda **bajar escalones**.  
+    Cada escalón debe conservar la posición horizontal acumulada y dibujar correctamente tanto el tramo horizontal como el vertical.
+
+    Por ejemplo:
+
     ```python
-    posicion = 0  # Guarda dónde terminó la tortuga después de avanzar
-
-    def adelante(pasos):
-        global posicion
-        posicion += pasos
-        print("-" * pasos + ">")
-
-    def abajo(pasos):
-        global posicion
-        for _ in range(pasos):
-            print(" " * posicion + "|")
-        print(" " * posicion + "v")
-
-    # Ejemplo de uso:
+    # Escalón 1
     adelante(5)
-    abajo(3)
+    abajo(2)
+
+    # Escalón 2
+    adelante(5)
+    abajo(2)
+
+    # Escalón 3
+    adelante(5)
+    abajo(2)
     ```
--->
 
+    **Comportamiento esperado:**
 
-
-
+    <img src="image-10.png" alt="escalera" width="350px">
