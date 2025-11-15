@@ -1325,15 +1325,10 @@ La salida es la imagen
     abajo(3)
     ```
 
-    Debería producir un patrón en forma de **L**, donde el trazo vertical queda colocado justo debajo de la punta de la flecha:
-
-    ```
-    ----->      ← avance horizontal
-         |
-         |
-         v
-    ```
-
+    Debería producir un patrón en forma de **L**
+    ![alt text](image-9.png)
+    
+<!--
 ??? success "Ver solución esperada"
     ```python
     posicion = 0  # Guarda dónde terminó la tortuga después de avanzar
@@ -1353,7 +1348,7 @@ La salida es la imagen
     adelante(5)
     abajo(3)
     ```
-![alt text](image-9.png)
+-->
 
 
 
