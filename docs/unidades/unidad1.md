@@ -1350,4 +1350,4 @@ La salida es la imagen
 
     **Comportamiento esperado:**
 
-    <img src="image-10.png" alt="escalera" width="350px">
+    ![alt text](image-11.png){ width="300px" }
