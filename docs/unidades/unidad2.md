@@ -47,4 +47,27 @@ La salida de este programa es:
 ```
 Esto sucede porque la primera vez que se imprime tiempo_aire, su valor es 15, y la segunda vez, es 7.
 
-!!! warning "Precaución: Asignación vs Igualdad" Es especialmente importante distinguir entre una sentencia de asignación y una expresión booleana que prueba igualdad.
+!!! warning "Precaución: Asignación vs Igualdad" Es especialmente           importante distinguir entre una sentencia de asignación y una expresión booleana que prueba igualdad.
+
+* Python usa el token igual (`=`) para la asignación.
+* Python usa el doble igual (`==`) para comparar igualdad.
+
+Recuerda que `a = 7` es una instrucción (haz que `a` valga 7), mientras que `a == 7` es una pregunta (¿es `a` igual a 7?).
+
+##  Actualización de variables
+
+Una de las formas más comunes de asignación es una actualización, donde el nuevo valor de la variable depende de su valor anterior.
+
+```python
+
+n = 5
+n = 3 * n + 1
+```
+
+La línea 2 significa: "obtén el valor actual de n, multiplícalo por 3 y súmale 1, y asigna la respuesta a n". Después de ejecutar esto, n valdrá 16.
+
+Si intentas actualizar una variable que no ha sido creada (inicializada), obtendrás un error.
+
+!!! failure "Error de nombre" python >>> w = x + 1 NameError: name 'x' is not defined
+
+Antes de poder actualizar una variable, debes inicializarla, generalmente con una simple asignación:
