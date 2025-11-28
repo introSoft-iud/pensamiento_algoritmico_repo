@@ -124,3 +124,33 @@ def area_triangulo(base, altura):
 **Concepto Clave: Aislamiento**
 
 La lógica matemática vive solo aquí. Si quisiéramos cambiar el cálculo (e.g., usar una constante pi más precisa), solo tendríamos que modificar este archivo.
+
+## 3. 🛡️ La Interfaz Pública: `__init__.py`
+
+El archivo `__init__.py` es el portal del paquete. Permite dos cosas fundamentales:
+
+1. Indica a Python que el directorio `mini_geom` debe tratarse como un paquete.
+2. Define qué funciones del módulo interno (`calculations.py`) son visibles directamente cuando un usuario importa el paquete. Esto se llama **abstracción**.
+
+```python
+# mini_geom/__init__.py
+
+# Importamos las funciones desde el módulo interno (calculations.py)
+from .calculations import (
+    area_circulo, 
+    perimetro_rectangulo, 
+    area_triangulo
+)
+
+# Definimos la versión y la lista de elementos exportados
+__version__ = "1.0.0"
+__all__ = ["area_circulo", "perimetro_rectangulo", "area_triangulo"]
+```
+
+**Concepto Clave: Abstracción**
+
+El usuario del paquete no necesita saber que las funciones están dentro del archivo `calculations.py`. El `__init__.py` abstrae esa estructura interna.
+
+La línea `__all__ = ["area_circulo", "perimetro_rectangulo", "area_triangulo"]` define explícitamente qué elementos del módulo se exportan cuando se usa `from mini_geom import *`. Esto ayuda a controlar qué partes del módulo están disponibles públicamente.
+
+Las líneas `from .calculations import ( area_circulo, perimetro_rectangulo, area_triangulo )` importan las funciones del módulo `calculations.py` y las exponen a nivel del paquete. Esto permite que los usuarios accedan a las funciones directamente desde el paquete sin necesidad de conocer la estructura interna.
