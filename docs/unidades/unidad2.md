@@ -98,7 +98,7 @@ Este archivo está diseñado para ser claro, educativo y fácil de integrar.
 
 ## 2. 📝 El Módulo de Lógica: `calculations.py`
 
-Este archivo contiene la **lógica de negocio** o las **funciones utilitarias**. Es crucial que, en este ejemplo, estas funciones sean **puras**: solo toman una entrada y devuelven una salida, sin modificar variables externas (sin estado global).
+Este archivo contiene la **lógica de negocio** o las **funciones utilitarias**. 
 
 ```python
 # mini_geom/calculations.py
@@ -106,17 +106,17 @@ Este archivo contiene la **lógica de negocio** o las **funciones utilitarias**.
 import math
 
 def area_circulo(radio):
-    """Calcula el área de un círculo (función pura)."""
+    """Calcula el área de un círculo ."""
     # ... validaciones y cálculo ...
     return math.pi * radio**2
 
 def perimetro_rectangulo(lado_a, lado_b):
-    """Calcula el perímetro de un rectángulo (función pura)."""
+    """Calcula el perímetro de un rectángulo."""
     # ... validaciones y cálculo ...
     return 2 * (lado_a + lado_b)
 
 def area_triangulo(base, altura):
-    """Calcula el área de un triángulo (función pura)."""
+    """Calcula el área de un triángulo ."""
     # ... validaciones y cálculo ...
     return 0.5 * base * altura
 ```
@@ -154,3 +154,19 @@ El usuario del paquete no necesita saber que las funciones están dentro del arc
 La línea `__all__ = ["area_circulo", "perimetro_rectangulo", "area_triangulo"]` define explícitamente qué elementos del módulo se exportan cuando se usa `from mini_geom import *`. Esto ayuda a controlar qué partes del módulo están disponibles públicamente.
 
 Las líneas `from .calculations import ( area_circulo, perimetro_rectangulo, area_triangulo )` importan las funciones del módulo `calculations.py` y las exponen a nivel del paquete. Esto permite que los usuarios accedan a las funciones directamente desde el paquete sin necesidad de conocer la estructura interna.
+
+Al importar las funciones en `__init__.py`, los usuarios pueden utilizar las funciones del paquete de manera más sencilla. 
+
+Por ejemplo, si no se incluyera la línea de importación en `__init__.py`, un usuario tendría que acceder a las funciones de la siguiente manera:
+
+```python
+from mini_geom.calculations import area_circulo
+```
+
+Sin embargo, al importar las funciones en `__init__.py`, el usuario puede simplemente hacer:
+
+```python
+from mini_geom import area_circulo
+```
+
+Esto simplifica el uso del paquete y oculta la estructura interna, permitiendo que los usuarios trabajen con el paquete de manera más intuitiva y directa.
