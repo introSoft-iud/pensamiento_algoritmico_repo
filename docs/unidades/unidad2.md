@@ -71,3 +71,7 @@ Si intentas actualizar una variable que no ha sido creada (inicializada), obtend
 !!! failure "Error de nombre" python >>> w = x + 1 NameError: name 'x' is not defined
 
 Antes de poder actualizar una variable, debes inicializarla, generalmente con una simple asignación:
+
+
+
+# 🧩 Estructuración Modular de Programas en Python
