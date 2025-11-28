@@ -170,3 +170,32 @@ from mini_geom import area_circulo
 ```
 
 Esto simplifica el uso del paquete y oculta la estructura interna, permitiendo que los usuarios trabajen con el paquete de manera más intuitiva y directa.
+
+## 4. 🚀 Uso del Paquete por el Usuario Final (`main.py`)
+
+Un script de usuario que consume el paquete se beneficia de la interfaz limpia. La importación es directa desde el nombre del paquete.
+
+```python
+# main.py
+
+# Importación limpia gracias al __init__.py:
+from mini_geom import area_circulo, perimetro_rectangulo
+
+# 1. Uso de las funciones:
+radio_c = 4
+area = area_circulo(radio_c)
+print(f"Área del círculo de radio {radio_c}: {area:.2f}")
+
+# 2. Reutilización simple:
+lado1 = 10
+lado2 = 5
+perimetro = perimetro_rectangulo(lado1, lado2)
+print(f"Perímetro del rectángulo ({lado1}x{lado2}): {perimetro}")
+```
+
+| Beneficio     | Descripción                                                                                             |
+|---------------|---------------------------------------------------------------------------------------------------------|
+| Organización  | El código está separado por responsabilidades (lógica, interfaz, configuración).                        |
+| Reutilización | Las funciones pueden ser importadas y usadas en cualquier proyecto sin copiar el código.                |
+| Mantenibilidad| Los errores o actualizaciones en un módulo (e.g., `calculations.py`) no afectan a otros módulos, simplificando el debugging. |
+| Abstracción   | Los usuarios solo ven la interfaz pública, sin necesidad de conocer los detalles internos de la implementación. |
