@@ -95,3 +95,32 @@ mini_geom_project/
 ```
 
 Este archivo está diseñado para ser claro, educativo y fácil de integrar.
+
+## 2. 📝 El Módulo de Lógica: `calculations.py`
+
+Este archivo contiene la **lógica de negocio** o las **funciones utilitarias**. Es crucial que, en este ejemplo, estas funciones sean **puras**: solo toman una entrada y devuelven una salida, sin modificar variables externas (sin estado global).
+
+```python
+# mini_geom/calculations.py
+
+import math
+
+def area_circulo(radio):
+    """Calcula el área de un círculo (función pura)."""
+    # ... validaciones y cálculo ...
+    return math.pi * radio**2
+
+def perimetro_rectangulo(lado_a, lado_b):
+    """Calcula el perímetro de un rectángulo (función pura)."""
+    # ... validaciones y cálculo ...
+    return 2 * (lado_a + lado_b)
+
+def area_triangulo(base, altura):
+    """Calcula el área de un triángulo (función pura)."""
+    # ... validaciones y cálculo ...
+    return 0.5 * base * altura
+```
+
+**Concepto Clave: Aislamiento**
+
+La lógica matemática vive solo aquí. Si quisiéramos cambiar el cálculo (e.g., usar una constante pi más precisa), solo tendríamos que modificar este archivo.
