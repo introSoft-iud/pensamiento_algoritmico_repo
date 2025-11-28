@@ -199,3 +199,57 @@ print(f"Perímetro del rectángulo ({lado1}x{lado2}): {perimetro}")
 | Reutilización | Las funciones pueden ser importadas y usadas en cualquier proyecto sin copiar el código.                |
 | Mantenibilidad| Los errores o actualizaciones en un módulo (e.g., `calculations.py`) no afectan a otros módulos, simplificando el debugging. |
 | Abstracción   | Los usuarios solo ven la interfaz pública, sin necesidad de conocer los detalles internos de la implementación. |
+
+
+La modularidad es solo el primer paso; el despliegue y la distribución son lo que permite que otros (o usted mismo en otro proyecto) realmente usen su paquete.
+
+Aquí hay una elaboración detallada sobre cómo se prepara, configura y distribuye el paquete `mini_geom`, incluyendo el archivo `README.md` y la estructura moderna de `pyproject.toml`.
+
+## 🏗️ Preparación para el Despliegue del Paquete
+
+Antes de distribuir su paquete, necesitará dos archivos esenciales y el archivo de configuración `pyproject.toml`.
+
+### 1. `README.md` (Documentación)
+
+El `README.md` es la carta de presentación de su paquete. Explica qué hace, cómo se instala y cómo se usa. Es fundamental para cualquier paquete que quiera ser distribuido.
+
+```markdown
+# Mini Geom 📐
+
+Un paquete utilitario de Python simple para el cálculo de áreas y perímetros de figuras geométricas básicas.
+
+## 🚀 Instalación
+
+Este paquete no está publicado en PyPI (por ahora), pero puede instalarlo localmente clonando el repositorio:
+
+```bash
+git clone https://github.com/su-usuario/mini_geom_project.git
+cd mini_geom_project
+pip install .
+```
+
+## ✨ Uso
+
+Una vez instalado, importe las funciones directamente desde el paquete `mini_geom`:
+
+```python
+from mini_geom import area_circulo, perimetro_rectangulo
+import math
+
+# Área del círculo: A = π * r²
+print(f"Área del círculo de radio 5: {area_circulo(5):.2f}") 
+# Salida: 78.54
+
+# Perímetro del rectángulo: P = 2 * (a + b)
+print(f"Perímetro del rectángulo (10x5): {perimetro_rectangulo(10, 5)}")
+# Salida: 30
+```
+
+Cuando ejecutamos `pip install .` en la máquina, lo que sucede es lo siguiente:
+
+1. **Construcción del Paquete**: `pip` lee el archivo `pyproject.toml` para determinar cómo construir el paquete. Esto puede incluir la compilación de código si es necesario.
+2. **Instalación de Dependencias**: Si el paquete tiene dependencias especificadas, `pip` intentará instalarlas.
+3. **Instalación del Paquete**: `pip` instala el paquete en el entorno Python activo. Esto incluye copiar los archivos del paquete a un directorio donde Python pueda encontrarlos y registrar el paquete como instalado.
+4. **Registro de Metadatos**: `pip` guarda información sobre el paquete instalado, como su nombre, versión y dependencias, para que pueda ser gestionado más tarde.
+
+Este proceso permite que el paquete sea utilizado en cualquier script Python en ese entorno.
