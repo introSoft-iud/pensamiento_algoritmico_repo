@@ -76,12 +76,22 @@ Antes de poder actualizar una variable, debes inicializarla, generalmente con un
 
 # 📦 Modularidad y Empaquetado: Creando un Módulo de Utilidades
 
-En programación, la **Modularidad** es la práctica de dividir un programa grande en partes pequeñas, independientes y manejables, llamadas **módulos**. Esto hace que el código sea más limpio, fácil de mantener y reutilizable.
+En programación, la **modularidad** es la práctica de dividir un programa grande en partes pequeñas, independientes y manejables, llamadas **módulos**. Esto hace que el código sea más limpio, fácil de mantener y reutilizable.
 
-Python facilita esto con los **Paquetes** y **Módulos**. Usaremos un ejemplo simple, una **Mini Calculadora Geométrica**, para ilustrar cómo se estructura un paquete utilitario sin dependencias de estado global.
+Python facilita esto con los **paquetes** y **módulos**. Usaremos un ejemplo simple, una **Mini Calculadora Geométrica**, para ilustrar cómo se estructura un paquete utilitario sin dependencias de estado global.
 
 ---
 
 ## 1. 📁 Estructura del Proyecto
 
 Para que Python reconozca una colección de archivos como un **paquete**, debemos seguir una estructura de directorios específica. El nombre del directorio externo (aquí, `mini_geom_project`) puede ser cualquiera, pero el directorio interno (`mini_geom`) es el nombre real del paquete que se importará.
+
+```plaintext
+mini_geom_project/
+├── mini_geom/             <-- Nombre del Paquete (El código fuente)
+│   ├── __init__.py        <-- Interfaz (Obligatorio para el paquete)
+│   └── calculations.py    <-- Lógica (Donde residen las funciones)
+└── pyproject.toml         <-- Configuración para la distribución
+```
+
+Este archivo está diseñado para ser claro, educativo y fácil de integrar.
