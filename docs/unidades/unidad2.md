@@ -214,35 +214,37 @@ Antes de distribuir su paquete, necesitará dos archivos esenciales y el archivo
 El `README.md` es la carta de presentación de su paquete. Explica qué hace, cómo se instala y cómo se usa. Es fundamental para cualquier paquete que quiera ser distribuido.
 
 ```markdown
-# Mini Geom 📐
+    # Mini Geom 📐
 
-Un paquete utilitario de Python simple para el cálculo de áreas y perímetros de figuras geométricas básicas.
+    Un paquete utilitario de Python simple para el cálculo de áreas y perímetros de figuras geométricas básicas.
 
-## 🚀 Instalación
+    ## 🚀 Instalación
 
-Este paquete no está publicado en PyPI (por ahora), pero puede instalarlo localmente clonando el repositorio:
+    Este paquete no está publicado en PyPI (por ahora), pero puede instalarlo localmente clonando el repositorio:
 
-```bash
-git clone https://github.com/su-usuario/mini_geom_project.git
-cd mini_geom_project
-pip install .
-```
+    ```bash
+    git clone https://github.com/su-usuario/mini_geom_project.git
+    cd mini_geom_project
+    pip install .
+    ```
 
-## ✨ Uso
+    ## ✨ Uso
 
-Una vez instalado, importe las funciones directamente desde el paquete `mini_geom`:
+    Una vez instalado, importe las funciones directamente desde el paquete `mini_geom`:
 
-```python
-from mini_geom import area_circulo, perimetro_rectangulo
-import math
+    ```python
+    from mini_geom import area_circulo, perimetro_rectangulo
+    import math
 
-# Área del círculo: A = π * r²
-print(f"Área del círculo de radio 5: {area_circulo(5):.2f}") 
-# Salida: 78.54
+    # Área del círculo: A = π * r²
+    print(f"Área del círculo de radio 5: {area_circulo(5):.2f}") 
+    # Salida: 78.54
 
-# Perímetro del rectángulo: P = 2 * (a + b)
-print(f"Perímetro del rectángulo (10x5): {perimetro_rectangulo(10, 5)}")
-# Salida: 30
+    # Perímetro del rectángulo: P = 2 * (a + b)
+    print(f"Perímetro del rectángulo (10x5): {perimetro_rectangulo(10, 5)}")
+    # Salida: 30
+    ```
+
 ```
 
 Cuando ejecutamos `pip install .` en la máquina, lo que sucede es lo siguiente:
