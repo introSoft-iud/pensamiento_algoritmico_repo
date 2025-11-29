@@ -348,6 +348,9 @@ pip install mini-geom-calculator
 !!! note
     Hemos aprendido a lo largo de este flujo completo (Estructura interna → Configuración TOML → Construcción → Publicación) cómo no solo implementar la modularidad, sino también cómo crear software reutilizable y distribuible. Esta comprensión integral nos permite desarrollar paquetes Python que otros pueden instalar y utilizar fácilmente, facilitando la colaboración y el uso compartido de código en la comunidad de desarrollo.
 
+[Enlace al proyecto publicado en GitHub](https://github.com/introSoft-iud/mini_geom_project_new/tree/main)
+
+
 Ya puedes empezar a trabajar en el primer ejercicio de la última tarea del curso: **Modularizando Mini-Turtle**
 
 ### 🎯 Objetivo
@@ -417,8 +420,3 @@ Cree este archivo fuera del paquete `mini_turtle`. Este script demostrará que s
 
 - **`pyproject.toml`**: Cree el archivo de configuración con los metadatos del paquete (nombre, versión, autor, etc.). Puede usar el ejemplo de `mini-geom-calculator` como plantilla, cambiando el nombre del proyecto a `mini-turtle-drawer`.
 - **`README.md`**: Escriba una breve documentación que explique qué hace el paquete y muestre un ejemplo de uso (como el contenido de `main.py`).
-!!! note
-    Hemos aprendido a lo largo de este flujo completo (Estructura interna → Configuración TOML → Construcción → Publicación) cómo no solo implementar la modularidad, sino también cómo crear software reutilizable y distribuible. Esta comprensión integral nos permite desarrollar paquetes Python que otros pueden instalar y utilizar fácilmente, facilitando la colaboración y el uso compartido de código en la comunidad de desarrollo.
-
-[Enlace al proyecto publicado en GitHub](https://github.com/introSoft-iud/mini_geom_project_new/tree/main)
- 
