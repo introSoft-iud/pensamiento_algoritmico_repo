@@ -253,3 +253,46 @@ Cuando ejecutamos `pip install .` en la máquina, lo que sucede es lo siguiente:
 4. **Registro de Metadatos**: `pip` guarda información sobre el paquete instalado, como su nombre, versión y dependencias, para que pueda ser gestionado más tarde.
 
 Este proceso permite que el paquete sea utilizado en cualquier script Python en ese entorno.
+
+## 2. `pyproject.toml` (Configuración de Construcción)
+
+El archivo `pyproject.toml` es el estándar moderno (desde 2017) para configurar cómo se construye, distribuye y publica su paquete. Reemplaza al antiguo archivo `setup.py` para la mayoría de las configuraciones de metadatos.
+
+```toml
+# pyproject.toml
+
+[build-system]
+# Especificamos las herramientas necesarias para construir el paquete.
+requires = ["setuptools>=61.0", "wheel"] 
+build-backend = "setuptools.build_meta"
+
+[project]
+# --- Metadatos del Paquete ---
+name = "mini-geom-calculator"      # 👈 El nombre que se usará en PyPI y con `pip install`
+version = "1.0.0"                  # 👈 Versión actual (debe coincidir con __init__.py)
+description = "Un paquete utilitario para cálculos de geometría simple."
+readme = "README.md"
+authors = [
+    {name = "Su Nombre", email = "su.email@ejemplo.com"},
+]
+license = {text = "MIT License"}   # O especificar un archivo `LICENSE`
+keywords = ["geometría", "calculadora", "utilidades"]
+
+# Clasificadores que ayudan a la gente a encontrar su paquete en PyPI
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta", # Indica que no es completamente final
+]
+
+# Dependencias (si su paquete necesitara numpy, se listaría aquí)
+dependencies = [
+    # En este caso, solo necesitamos la librería estándar math, no hay dependencias externas
+]
+
+[project.urls]
+Homepage = "https://github.com/su-usuario/mini_geom_project"
+```
+
+Este archivo `pyproject.toml` especifica cómo se debe construir el paquete, define los metadatos necesarios para la publicación y describe las dependencias requeridas para el correcto funcionamiento del paquete. Además, proporciona información útil para los usuarios que buscan el paquete en PyPI, como el estado de desarrollo y las palabras clave asociadas.
