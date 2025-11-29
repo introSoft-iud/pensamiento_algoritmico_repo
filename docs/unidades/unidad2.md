@@ -298,3 +298,52 @@ Homepage = "https://github.com/su-usuario/mini_geom_project"
 ```
 
 Este archivo `pyproject.toml` especifica cómo se debe construir el paquete, define los metadatos necesarios para la publicación y describe las dependencias requeridas para el correcto funcionamiento del paquete. Además, proporciona información útil para los usuarios que buscan el paquete en PyPI, como el estado de desarrollo y las palabras clave asociadas.
+
+## 3. 📤 Distribución del Paquete
+
+Una vez que la estructura está lista, el proceso de distribución consta de dos pasos: **Construcción** y **Publicación**.
+
+### Paso A: Construir los Archivos de Distribución
+
+El proceso de construcción toma el código fuente y lo empaqueta en formatos estándar de distribución. Para esto, se necesita la herramienta `build` (puede usar `pip install build` si no la tiene).
+
+Ejecute este comando desde el directorio raíz del proyecto (`mini_geom_project`):
+
+```bash
+python -m build
+```
+
+Este comando genera dos tipos de archivos en un nuevo directorio llamado `dist/`:
+
+- **Sdist (Source Distribution) (`.tar.gz`)**: Contiene el código fuente y los metadatos. Permite reconstruir el paquete en diferentes entornos.
+
+- **Wheel (`.whl`)**: Es un formato de distribución binaria, más rápido de instalar para el usuario final, ya que ya está preconstruido para una versión de Python.
+
+### Paso B: Publicar en PyPI (El Índice de Paquetes de Python)
+
+El objetivo de este proceso es subir los archivos generados en `dist/` a PyPI (Python Package Index), el repositorio oficial de paquetes.
+
+1. **Instalar `twine`**: Es la herramienta estándar para subir paquetes de forma segura. Instálela con:
+
+    ```bash
+    pip install twine
+    ```
+
+2. **Subir los archivos**: Ejecute `twine` y apunte a los archivos en el directorio `dist/`:
+
+    ```bash
+    python -m twine upload dist/*
+    ```
+
+    `twine` le pedirá su nombre de usuario y contraseña de PyPI (o un token de API).
+
+### Resultado Final: Instalación por el Usuario
+
+Una vez publicado, cualquier persona en el mundo puede usar `pip` para instalar y usar su paquete modular:
+
+```bash
+# ¡Listo para ser usado globalmente!
+pip install mini-geom-calculator
+```
+
+Hemos aprendido a lo largo de el flujo completo (Estructura interna → Configuración TOML → Construcción → Publicación) cómo no solo implementar la modularidad, sino también cómo crear software reutilizable y distribuible. Esta comprensión integral nos permite desarrollar paquetes Python que otros pueden instalar y utilizar fácilmente, facilitando la colaboración y el uso compartido de código en la comunidad de desarrollo.
