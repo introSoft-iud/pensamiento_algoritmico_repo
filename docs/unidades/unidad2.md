@@ -345,5 +345,5 @@ Una vez publicado, cualquier persona en el mundo puede usar `pip` para instalar 
 # ¡Listo para ser usado globalmente!
 pip install mini-geom-calculator
 ```
-
-Hemos aprendido a lo largo de el flujo completo (Estructura interna → Configuración TOML → Construcción → Publicación) cómo no solo implementar la modularidad, sino también cómo crear software reutilizable y distribuible. Esta comprensión integral nos permite desarrollar paquetes Python que otros pueden instalar y utilizar fácilmente, facilitando la colaboración y el uso compartido de código en la comunidad de desarrollo.
+!!! note
+    Hemos aprendido a lo largo de este flujo completo (Estructura interna → Configuración TOML → Construcción → Publicación) cómo no solo implementar la modularidad, sino también cómo crear software reutilizable y distribuible. Esta comprensión integral nos permite desarrollar paquetes Python que otros pueden instalar y utilizar fácilmente, facilitando la colaboración y el uso compartido de código en la comunidad de desarrollo.
