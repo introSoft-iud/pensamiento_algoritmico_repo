@@ -347,3 +347,76 @@ pip install mini-geom-calculator
 ```
 !!! note
     Hemos aprendido a lo largo de este flujo completo (Estructura interna → Configuración TOML → Construcción → Publicación) cómo no solo implementar la modularidad, sino también cómo crear software reutilizable y distribuible. Esta comprensión integral nos permite desarrollar paquetes Python que otros pueden instalar y utilizar fácilmente, facilitando la colaboración y el uso compartido de código en la comunidad de desarrollo.
+
+Ya puedes empezar a trabajar en el primer ejercicio de la última tarea del curso: **Modularizando Mini-Turtle**
+
+### 🎯 Objetivo
+
+El objetivo de esta tarea es transformar el código inicial de las funciones `adelante()` y `abajo()` en un paquete Python distribuible llamado `mini_turtle`. Esto demostrará la comprensión de la modularidad, la separación de la lógica (el estado y las funciones) de la interfaz (`__init__.py`) y la preparación para la distribución (`pyproject.toml`).
+
+### ⚙️ Requerimientos Funcionales
+
+El paquete debe funcionar de la siguiente manera:
+
+- **Lógica del Dibujo**: Debe mantener un estado global de la posición (la variable `posicion_x`).
+- **Interfaz Limpia**: Los usuarios deben poder importar las funciones directamente desde el nombre del paquete.
+
+    ```python
+    from mini_turtle import adelante, abajo
+    ```
+
+- **Nueva Funcionalidad**: Debe añadir una función `reiniciar()` que resetee la posición a `posicion_x = 0`.
+
+### 📦 Estructura del Proyecto Requerida
+
+Su entrega debe seguir esta estructura de directorios exacta:
+
+```plaintext
+mini_turtle_task/
+├── mini_turtle/             <-- Carpeta del Paquete
+│   ├── __init__.py          <-- La Interfaz
+│   └── drawer_logic.py      <-- La Lógica y el Estado
+├── main.py                  <-- Script de prueba del usuario
+├── pyproject.toml           <-- Metadatos y Configuración
+└── README.md                <-- Documentación
+```
+
+### 📝 Implementación Paso a Paso
+
+**Paso 1: Módulo de Lógica (`mini_turtle/drawer_logic.py`)**
+
+Cree este archivo. Debe contener el estado global y todas las funciones de dibujo (`adelante`, `abajo`) y la nueva función `reiniciar`.
+
+**Contenido Clave**:
+
+- La variable `posicion_x` (estado global).
+- Las funciones `adelante(pasos)` y `abajo(pasos)`.
+- La nueva función `reiniciar()` para poner `posicion_x = 0`. Recuerde usar `global posicion_x`.
+
+**Paso 2: Archivo de Interfaz (`mini_turtle/__init__.py`)**
+
+Este archivo es la puerta de entrada. Debe importar las funciones públicas desde el archivo `drawer_logic.py` para exponerlas al usuario.
+
+**Contenido Clave**:
+
+- Use `from .drawer_logic import adelante, abajo, reiniciar`.
+- Defina la lista `__all__` y la variable `__version__`.
+
+**Paso 3: Script de Prueba (`main.py`)**
+
+Cree este archivo fuera del paquete `mini_turtle`. Este script demostrará que su paquete funciona y que el estado se mantiene a lo largo de las llamadas.
+
+**Contenido Requerido**:
+
+- Importe las tres funciones: `from mini_turtle import adelante, abajo, reiniciar`.
+- Dibuje una escalera de 2 escalones para acumular la posición.
+- Llame a `reiniciar()`.
+- Dibuje otro objeto (ej: un poste) para demostrar que la posición se reseteó a la columna 0.
+
+**Paso 4: Configuración y Documentación**
+
+- **`pyproject.toml`**: Cree el archivo de configuración con los metadatos del paquete (nombre, versión, autor, etc.). Puede usar el ejemplo de `mini-geom-calculator` como plantilla, cambiando el nombre del proyecto a `mini-turtle-drawer`.
+- **`README.md`**: Escriba una breve documentación que explique qué hace el paquete y muestre un ejemplo de uso (como el contenido de `main.py`).
+
+!!! note
+    Hemos aprendido a lo largo de este flujo completo (Estructura interna → Configuración TOML → Construcción → Publicación) cómo no solo implementar la modularidad, sino también cómo crear software reutilizable y distribuible. Esta comprensión integral nos permite desarrollar paquetes Python que otros pueden instalar y utilizar fácilmente, facilitando la colaboración y el uso compartido de código en la comunidad de desarrollo.
