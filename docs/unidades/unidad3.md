@@ -45,7 +45,7 @@ Este método se llama automáticamente justo después de crear el objeto. Su tra
   
   - Dentro de `__init__`, la línea `self.radio = 5` almacena el valor 5 en la memoria recién reservada para ese objeto `mi_circulo`.
 
-  ## Implementación POO: La Calculadora Geométrica
+## Implementación POO: La Calculadora Geométrica
 
 Aplicaremos estos conceptos para crear clases que modelen las figuras geométricas, llevando la lógica de `calculations.py` al interior de los objetos.
 
