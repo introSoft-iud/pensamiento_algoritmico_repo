@@ -219,7 +219,7 @@ print(f"Área: {mi_circulo.calcular_area()}")
 mi_cancha = Rectangulo(lado_a=20, lado_b=10)
 print(f"Perímetro: {mi_cancha.calcular_perimetro()}")
 ```
-```
+
 
 ### 3. ⚖️ `LICENSE` y `.gitignore`: Higiene del Proyecto
 
